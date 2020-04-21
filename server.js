@@ -13,10 +13,12 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
+const Glist = require("./models/Glist.model");
+const User = require("./models/User.model")
 // Define API routes here
 app.use(routes);
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/reactreadinglist");
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/checkitout");
 
 // Send every other request to the React app
 // Define any API routes before this runs
