@@ -5,17 +5,38 @@ const db = require("../models");
 
 mongoose.connect(
   process.env.MONGODB_URI ||
-  "mongodb://localhost/reactreadinglist"
+  "mongodb://localhost/checkitout"
   //put in our DB
 );
 
-const listSeed = [
-    //objects 
+const seeds = [
+     {
+       name: "Calvin",
+       groceryList: [{
+         _id: "randomcode",
+         groceryListSchema: [{
+           groceryListItem: "newnew test"
+         },
+        {
+          groceryListItem: "testest"
+        }]
+       },
+       {
+        _id: "another-code",
+        groceryListSchema: [{
+          groceryListItem: "blahblah test"
+        },
+       {
+         groceryListItem: "testest"
+       }]
+      }],
+
+     }
 ];
 
-db.List
-  .remove({})
-  .then(() => db.List.collection.insertMany(listSeed))
+  db.GroceryDB
+  .deleteMany({})
+  .then(() => db.GroceryDB.collection.insertMany(seeds))
   .then(data => {
     console.log(data.result.n + " records inserted!");
     process.exit(0);
@@ -24,3 +45,4 @@ db.List
     console.error(err);
     process.exit(1);
   });
+
