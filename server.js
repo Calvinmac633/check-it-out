@@ -4,6 +4,10 @@ const path = require("path");
 const routes = require("./routes");
 const PORT = process.env.PORT || 3001;
 const app = express();
+const bodyParser = require("body-parser")
+
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
@@ -16,10 +20,13 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/public"));
 }
 
+const GroceryDB = require("./models/index")
+
+
 // Define API routes here
 app.use(routes);
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/reactreadinglist");
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/checkitout");
 
 // Send every other request to the React app
 // Define any API routes before this runs
