@@ -15,6 +15,9 @@ app.use(express.json());
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
+
+} else {
+  app.use(express.static("client/public"));
 }
 
 const GroceryDB = require("./models/index")
