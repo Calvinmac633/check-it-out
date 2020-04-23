@@ -4,13 +4,13 @@ const listController = require("../../controllers/listController");
 // Matches with "/api/list"
 router.route("/")
   .get(listController.findAll)
-  .post(listController.create);
+  // .post(listController.create);
 
 // Matches with "/api/list/:id"
-router
-  .route("/:id")
-  .get(listController.findById)
-  .put(listController.update)
-  .delete(listController.remove);
+// router
+//   .route("/:id")
+//   .get(listController.findById)
+//   .put(listController.update)
+//   .delete(listController.remove);
 
 module.exports = router;
