@@ -6,11 +6,12 @@ import {
 } from "react-router-dom";
 import logo from "./logo.svg";
 import "./App.css";
-import AppBar from  "./components/AppBar";
+import AppBar from "./components/AppBar";
 import Carousel from "./components/Carousel";
 import SignIn from "./components/SignIn";
 import SignUp from "./components/SignUp";
 import Footer from "./components/Footer";
+import Additem from "./components/Additem";
 function App() {
   return (
     <div>
@@ -23,12 +24,17 @@ function App() {
           <Route path='/signin'>
             <SignIn />
           </Route>
+          <Route path='/Additem'>
+            <Additem />
+          </Route>
           <Route path='/'>
             <Carousel />
-          </Route>
+          </Route> 
         </Switch>
         <Footer />
       </Router>
+         
+
     </div>
   );
 }
