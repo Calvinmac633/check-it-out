@@ -1,15 +1,10 @@
 const db = require("../models");
-
 // Defining methods for the booksController
 module.exports = {
-  findAll: function(req, res) {
-  },
-  findById: function(req, res) {
-  },
-  create: function(req, res) {
-  },
-  update: function(req, res) {
-  },
-  remove: function(req, res) {
+  findAll: function (req, res) {
+    db.GroceryDB
+      .find(req.query)
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
   }
 };
