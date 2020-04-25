@@ -2,8 +2,6 @@ import React, { useState, useEffect } from "react";
 import { Form, Button, Table } from 'react-bootstrap';
 import API from "../../utils/API"
 
-
-
 export function List() {
     const [list, setList] = useState([]);
     const [formObject, setFormObject] = useState([]);
@@ -13,7 +11,9 @@ export function List() {
         loadList()
     }, [])
 
-    // Loads all books and sets them to books
+
+
+    // Loads all books and sets them to books -------------------------------------
     function loadList() {
         API.getList()
             .then(res =>
@@ -21,6 +21,30 @@ export function List() {
             )
             .catch(err => console.log(err));
     }
+
+    // // Handles Input -> creating object to send to state -------------------------------------
+
+    // function handleInputChange(event) {
+    //     const { name, value } = event.target;
+    //     setFormObject({ ...formObject, [name]: value })
+    // };
+
+    // // Handles Submit -------------------------------------
+
+    // function handleFormSubmit(event) {
+    //     event.preventDefault();
+    //     if (formObject.name) {
+    //         API.saveBook({
+    //             name: formObject.name,
+    //             // quantity: formObject.quantity,
+    //             // purchased: formObject.purchased
+    //         })
+    //             .then(res => loadList())
+    //             .catch(err => console.log(err));
+    //     }
+    // };
+
+
     return (
         <Table striped bordered hover>
             <thead>
