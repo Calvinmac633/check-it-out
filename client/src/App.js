@@ -11,7 +11,7 @@ import Carousel from "./components/Carousel";
 import SignIn from "./components/SignIn";
 import SignUp from "./components/SignUp";
 import Footer from "./components/Footer";
-import Additem from "./components/Additem";
+import { Additem } from "./components/Additem";
 function App() {
   return (
     <div>

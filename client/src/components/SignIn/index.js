@@ -73,8 +73,9 @@ export default function SignIn() {
             control={<Checkbox value="remember" color="primary" />}
             label="Remember me"
           />
+          <Link href="/Additem">
           <Button
-            type="submit"
+            // type="submit"
             fullWidth
             variant="contained"
             color="primary"
@@ -82,6 +83,8 @@ export default function SignIn() {
           >
             Sign In
           </Button>
+          </Link>
+          
           <Grid container>
             <Grid item xs>
               <Link href="#" variant="body2">
