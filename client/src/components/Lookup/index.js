@@ -6,7 +6,7 @@ import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import NativeSelect from '@material-ui/core/NativeSelect';
 import InputBase from '@material-ui/core/InputBase';
-
+import Button from '@material-ui/core/Button';
 const BootstrapInput = withStyles((theme) => ({
   root: {
     'label + &': {
@@ -48,7 +48,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function CustomizedSelects() {
+export default function Lookup() {
   const classes = useStyles();
   const [age, setAge] = React.useState('');
   const handleChange = (event) => {
@@ -57,28 +57,11 @@ export default function CustomizedSelects() {
   return (
     <div>
       <FormControl className={classes.margin}>
-        <InputLabel htmlFor="demo-customized-textbox">Age</InputLabel>
+        <InputLabel htmlFor="demo-customized-textbox">List Name</InputLabel>
         <BootstrapInput id="demo-customized-textbox" />
       </FormControl>
       <FormControl className={classes.margin}>
-        <InputLabel id="demo-customized-select-label">Age</InputLabel>
-        <Select
-          labelId="demo-customized-select-label"
-          id="demo-customized-select"
-          value={age}
-          onChange={handleChange}
-          input={<BootstrapInput />}
-        >
-          <MenuItem value="">
-            <em>None</em>
-          </MenuItem>
-          <MenuItem value={10}>Ten</MenuItem>
-          <MenuItem value={20}>Twenty</MenuItem>
-          <MenuItem value={30}>Thirty</MenuItem>
-        </Select>
-      </FormControl>
-      <FormControl className={classes.margin}>
-        <InputLabel htmlFor="demo-customized-select-native">Age</InputLabel>
+        <InputLabel htmlFor="demo-customized-select-native">Select</InputLabel>
         <NativeSelect
           id="demo-customized-select-native"
           value={age}
@@ -86,11 +69,15 @@ export default function CustomizedSelects() {
           input={<BootstrapInput />}
         >
           <option aria-label="None" value="" />
-          <option value={10}>Ten</option>
-          <option value={20}>Twenty</option>
-          <option value={30}>Thirty</option>
+          <option value={10}>Search List</option>
+          <option value={20}>Create List </option>
         </NativeSelect>
       </FormControl>
+      <div> 
+      <Button variant="contained" color="primary">
+        Check it out 
+      </Button>
+  </div>
     </div>
   );
 }

@@ -29,7 +29,7 @@ function App() {
             <Additem />
           </Route>
           <Route path='/Lookup'>
-            <Additem />
+            <Lookup />
           </Route>
           <Route path='/'>
             <Carousel />
