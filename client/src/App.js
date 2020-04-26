@@ -13,7 +13,7 @@ import SignUp from "./components/SignUp";
 import Footer from "./components/Footer";
 // import Additem from "./components/Additem";
 // import Lookup from "./components/Lookup";
-import ListPage from "./pages/ListPage"
+import {ListPage} from "./pages/ListPage"
 
 function App() {
   return (
