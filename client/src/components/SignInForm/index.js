@@ -12,6 +12,7 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
+import AppBar from "../AppBar";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -33,10 +34,11 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function SignIn() {
+export default function SignInForm() {
   const classes = useStyles();
 
   return (
+    <div>
     <Container component="main" maxWidth="xs">
       <CssBaseline />
       <div className={classes.paper}>
@@ -73,8 +75,9 @@ export default function SignIn() {
             control={<Checkbox value="remember" color="primary" />}
             label="Remember me"
           />
+          <Link href="/List">
           <Button
-            type="submit"
+            // type="submit"
             fullWidth
             variant="contained"
             color="primary"
@@ -82,6 +85,8 @@ export default function SignIn() {
           >
             Sign In
           </Button>
+          </Link>
+          
           <Grid container>
             <Grid item xs>
               <Link href="#" variant="body2">
@@ -97,5 +102,6 @@ export default function SignIn() {
         </form>
       </div>
     </Container>
+    </div>
   );
 }

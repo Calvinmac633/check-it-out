@@ -3,9 +3,11 @@ import Slide1 from '../../images/Slide1.png';
 import Slide2 from '../../images/Slide4.png';
 import Slide3 from '../../images/Slide3.png';
 import { Button, Carousel } from 'react-bootstrap';
-
+import AppBar from "../AppBar";
 function ControlledCarousel() {
   return (
+    <div>
+     <AppBar link1="/signup" text1="Sign up" link2="/signin" text2="Sign in"/>
       <div className="container">
       <Carousel style={{  width: 900,
         height:500, overflow: 'hidden',
@@ -55,6 +57,7 @@ function ControlledCarousel() {
       </Button>
       </div>
       
+      </div>
       </div>
     );
   }

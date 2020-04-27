@@ -8,27 +8,42 @@ import logo from "./logo.svg";
 import "./App.css";
 import AppBar from "./components/AppBar";
 import Carousel from "./components/Carousel";
-import SignIn from "./components/SignIn";
-import SignUp from "./components/SignUp";
 import Footer from "./components/Footer";
+<<<<<<< HEAD
 import Additem from "./pages/additem";
+=======
+import {ListPage} from "./pages/ListPage"
+import {Home} from "./pages/Home"
+import {Signup} from "./pages/Signup"
+import {Signin} from "./pages/Signin"
+import 'font-awesome/css/font-awesome.min.css';
+import Lookup from "./components/Lookup";
+
+>>>>>>> 25126a7151ac24f4c1ce706f9266aaefee877f91
 function App() {
   return (
     <div>
       <Router>
-        <AppBar />
         <Switch>
           <Route path='/signup'>
-            <SignUp />
+            <Signup />
           </Route>
           <Route path='/signin'>
-            <SignIn />
+            <Signin />
           </Route>
+          <Route path='/List'>
+            <ListPage />
+          </Route>
+<<<<<<< HEAD
           <Route exact path={["/", "/Additem"]}>
             <Additem />
+=======
+          <Route path='/Lookup'>
+            <Lookup />
+>>>>>>> 25126a7151ac24f4c1ce706f9266aaefee877f91
           </Route>
           <Route path='/'>
-            <Carousel />
+            <Home />
           </Route> 
         </Switch>
         <Footer />

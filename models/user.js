@@ -12,7 +12,7 @@ const itemSchema = new Schema({
 const userSchema = new Schema({
     userName: String,
     List: [
-        itemSchema 
+        itemSchema
     ]                  
 });
 
