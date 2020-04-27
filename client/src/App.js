@@ -8,10 +8,13 @@ import logo from "./logo.svg";
 import "./App.css";
 import AppBar from "./components/AppBar";
 import Carousel from "./components/Carousel";
-import SignIn from "./components/SignIn";
-import SignUp from "./components/SignUp";
 import Footer from "./components/Footer";
-import Additem from "./components/Additem";
+import {ListPage} from "./pages/ListPage"
+import {Home} from "./pages/Home"
+import {Signup} from "./pages/Signup"
+import {Signin} from "./pages/Signin"
+import 'font-awesome/css/font-awesome.min.css';
+
 function App() {
   return (
     <div>
@@ -19,16 +22,19 @@ function App() {
         <AppBar />
         <Switch>
           <Route path='/signup'>
-            <SignUp />
+            <Signup />
           </Route>
           <Route path='/signin'>
-            <SignIn />
+            <Signin />
           </Route>
-          <Route path='/Additem'>
-            <Additem />
+          <Route path='/List'>
+            <ListPage />
           </Route>
+          {/* <Route path='/Lookup'>
+            <Lookup />
+          </Route> */}
           <Route path='/'>
-            <Carousel />
+            <Home />
           </Route> 
         </Switch>
         <Footer />
