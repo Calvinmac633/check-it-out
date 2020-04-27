@@ -3,6 +3,7 @@ import { Form, Button, Table } from 'react-bootstrap';
 import API from "../utils/API"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheck } from '@fortawesome/free-solid-svg-icons'
+import AppBar from "../components/AppBar"
 
 export function ListPage() {
     const [list, setList] = useState([]);
@@ -45,6 +46,8 @@ export function ListPage() {
     var count = 1
 
     return (
+        <div>
+        <AppBar link1="/signup" text1="Sign up" link2="/signin" text2="Sign in" />
         <main role="main">
 
             <section class="jumbotron text-left">
@@ -94,6 +97,8 @@ export function ListPage() {
                 </div>
             </section>
         </main>
+
+        </div>
     );
 
 }
