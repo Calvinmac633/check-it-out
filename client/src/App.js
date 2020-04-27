@@ -17,7 +17,6 @@ function App() {
   return (
     <div>
       <Router>
-        <AppBar />
         <Switch>
           <Route path='/signup'>
             <SignUp />
