@@ -7,6 +7,8 @@ import Select from '@material-ui/core/Select';
 import NativeSelect from '@material-ui/core/NativeSelect';
 import InputBase from '@material-ui/core/InputBase';
 import Button from '@material-ui/core/Button';
+import AppBar from "../AppBar";
+
 const BootstrapInput = withStyles((theme) => ({
   root: {
     'label + &': {
@@ -55,6 +57,8 @@ export default function Lookup() {
     setAge(event.target.value);
   };
   return (
+    <div> 
+    <AppBar link1="/" text1="Log out"/>
     <div>
       <FormControl className={classes.margin}>
         <InputLabel htmlFor="demo-customized-textbox">List Name</InputLabel>
@@ -78,6 +82,7 @@ export default function Lookup() {
         Check it out 
       </Button>
   </div>
+    </div>
     </div>
   );
 }

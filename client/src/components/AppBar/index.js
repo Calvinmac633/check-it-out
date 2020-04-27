@@ -7,7 +7,7 @@ import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import { Link } from 'react-router-dom';
-
+import Modal from "../Modal";
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function ButtonAppBar() {
+export default function ButtonAppBar(props) {
   const classes = useStyles();
 
   return (
@@ -31,10 +31,13 @@ export default function ButtonAppBar() {
           <Typography variant="h6" className={classes.title }>
             <a style={{ color: 'white' }} href="/">Check It Out</a>
           </Typography>
-          <Button color="inherit"><a style={{ color: 'white' }} href="/signin">Signin</a></Button>
-          <Button color="inherit"><a style={{ color: 'white' }} href="/signup">Signup</a></Button>
+          <Modal />
+  <Button color="inherit"><a style={{ color: 'white' }} href={props.link1}>{props.text1}</a></Button>
+  <Button color="inherit"><a style={{ color: 'white' }} href={props.link2}>{props.text2}</a></Button>
         </Toolbar>
       </AppBar>
+  
+      
     </div>
   );
 }

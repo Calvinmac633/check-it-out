@@ -1,7 +1,11 @@
 import React from 'react';
 import { Form, Button} from 'react-bootstrap';
+import AppBar from "../AppBar";
+
 function Additem() {
   return (
+    <div>
+    <AppBar link1="/" text1="Log out"/ >
     <main role="main">
 
       <section class="jumbotron text-left">
@@ -18,6 +22,7 @@ function Additem() {
         </div>
       </section>
       </main>
+      </div>
       );
 }
 
