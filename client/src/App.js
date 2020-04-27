@@ -14,12 +14,12 @@ import {Home} from "./pages/Home"
 import {Signup} from "./pages/Signup"
 import {Signin} from "./pages/Signin"
 import 'font-awesome/css/font-awesome.min.css';
+import Lookup from "./components/Lookup";
 
 function App() {
   return (
     <div>
       <Router>
-        <AppBar />
         <Switch>
           <Route path='/signup'>
             <Signup />
@@ -30,9 +30,9 @@ function App() {
           <Route path='/List'>
             <ListPage />
           </Route>
-          {/* <Route path='/Lookup'>
+          <Route path='/Lookup'>
             <Lookup />
-          </Route> */}
+          </Route>
           <Route path='/'>
             <Home />
           </Route> 

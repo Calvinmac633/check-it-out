@@ -12,7 +12,7 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
-
+import AppBar from "../AppBar";
 const useStyles = makeStyles((theme) => ({
   paper: {
     marginTop: theme.spacing(8),
@@ -37,6 +37,8 @@ export default function SignUpForm() {
   const classes = useStyles();
 
   return (
+    <div>
+    <AppBar />
     <Container component="main" maxWidth="xs">
       <CssBaseline />
       <div className={classes.paper}>
@@ -115,5 +117,6 @@ export default function SignUpForm() {
         </form>
       </div>
     </Container>
+    </div>
   );
 }
