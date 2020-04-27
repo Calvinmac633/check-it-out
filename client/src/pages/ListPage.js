@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Form, Button, Table } from 'react-bootstrap';
 import API from "../utils/API"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCheck } from '@fortawesome/free-solid-svg-icons'
 
 export function ListPage() {
     const [list, setList] = useState([]);
@@ -35,10 +37,12 @@ export function ListPage() {
                 // quantity: formObject.quantity,
                 // purchased: formObject.purchased
             })
-                // .then(res => loadList())
+                .then(res => loadList())
                 .catch(err => console.log(err));
         }
     };
+
+    var count = 1
 
     return (
         <main role="main">
@@ -52,37 +56,40 @@ export function ListPage() {
                                 Enter the item name.
                   </Form.Text>
                         </Form.Group>
-                        <Button onClick={handleFormSubmit} variant="primary" type="submit">Add to list</Button>
+                        <Button onClick={console.log("been clicked")} variant="primary" type="button">Add to list</Button>
                     </Form>
                     <Table striped bordered hover>
-            <thead>
-                <tr>
-                    <th>#</th>
-                    <th>Item</th>
-                    <th>Quantitiy</th>
-                    <th>Purchased?</th>
-                </tr>
-            </thead>
-            {list.map(list => {
-                return (
-                    <tbody>
-                        {list.List[0].itemSchema.map(item => {
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Item</th>
+                                <th>Quantitiy</th>
+                                <th>Purchased?</th>
+                            </tr>
+                        </thead>
+                        {list.map(list => {
                             return (
-                                <tr>
-                                    <td>auto</td>
-                                    <td>{item.name}</td>
-                                    <td>{item.quantity}</td>
-                                    <Button>
-                                        <td>{item.purchased}</td>
-                                    </Button>
-                                    {console.log(list)}
-                                </tr>
+                                <tbody>
+                                    {list.List[0].itemSchema.map(item => {
+                                        return (
+                                            <tr>
+                                                <td>{count++}</td>
+                                                <td>{item.name}</td>
+                                                <td>{item.quantity}</td>
+                                                <td>
+                                                    <Button>
+                                                        <FontAwesomeIcon icon={faCheck}>
+                                                            {item.purchased}</FontAwesomeIcon>
+                                                    </Button>
+                                                </td>
+                                                {console.log(list)}
+                                            </tr>
+                                        )
+                                    })}
+                                </tbody>
                             )
                         })}
-                    </tbody>
-                )
-            })}
-        </Table>
+                    </Table>
 
                 </div>
             </section>
