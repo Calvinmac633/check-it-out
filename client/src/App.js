@@ -11,7 +11,7 @@ import Carousel from "./components/Carousel";
 import SignIn from "./components/SignIn";
 import SignUp from "./components/SignUp";
 import Footer from "./components/Footer";
-import Additem from "./components/Additem";
+import Additem from "./pages/additem";
 function App() {
   return (
     <div>
@@ -24,7 +24,7 @@ function App() {
           <Route path='/signin'>
             <SignIn />
           </Route>
-          <Route path='/Additem'>
+          <Route exact path={["/", "/Additem"]}>
             <Additem />
           </Route>
           <Route path='/'>
