@@ -1,15 +1,17 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const groceryListSchema = new Schema({
+const itemSchema = new Schema({
     _id: { type: Schema.ObjectId, auto: true },
-    groceryListItem: String
+    name: String,
+    quantity: Number,
+    purchased: Boolean
 })
 
 const userSchema = new Schema({
-    name: String,
-    groceryList: [
-        groceryListSchema 
+    userName: String,
+    List: [
+        itemSchema
     ]                  
 });
 
