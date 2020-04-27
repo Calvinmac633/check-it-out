@@ -33,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function SignIn() {
+export default function SignInForm() {
   const classes = useStyles();
 
   return (
@@ -73,7 +73,7 @@ export default function SignIn() {
             control={<Checkbox value="remember" color="primary" />}
             label="Remember me"
           />
-          <Link href="/Additem">
+          <Link href="/List">
           <Button
             // type="submit"
             fullWidth
