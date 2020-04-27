@@ -39,7 +39,6 @@ export default function SignInForm() {
 
   return (
     <div>
-    <AppBar />
     <Container component="main" maxWidth="xs">
       <CssBaseline />
       <div className={classes.paper}>
