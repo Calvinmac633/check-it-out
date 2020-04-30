@@ -11,55 +11,24 @@ mongoose.connect(
 
 const seeds = [
   {
-    userName: "Calvin",
-    List: [{
-      _id: "randomcode",
-      itemSchema: [{
-        name: "Milk",
-        quantity: "1",
-        purchased: false
-      },
+    _id: "User1",
+    username: "hannali",
+    password: "hannali123",
+    lists:[
       {
-        name: "Cereal",
-        quantity: "3",
-        purchased: false
-      },
-      {
-        name: "Ham",
-        quantity: "2",
-        purchased: false
-      },
-      {
-        name: "Eggs",
-        quantity: "100",
-        purchased: false
-      },
-      {
-        name: "Tofu",
-        quantity: "1",
-        purchased: false
-      },
-      {
-        name: "Salad",
-        quantity: "5",
-        purchased: false
-      },
+        _id:"List1",
+        codename: "Hello-World",
+        listname: "Grocery List",
+        items: [
+          {
+            _id: "item1",
+            name: "pineapple",
+            quantity: 1,
+            purchased: false
+          }
+        ]
+      }
     ]
-    },
-    {
-      _id: "another-code",
-      itemSchema: [{
-        name: "Vodka",
-        quantity: "2",
-        purchased: false
-      },
-      {
-        name: "Beers",
-        quantity: "30",
-        purchased: false
-      }]
-    }],
-
   }
 ];
 

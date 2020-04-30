@@ -20,14 +20,27 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/public"));
 }
 
+// Passport Config
+require('./config/passport')(passport);
+
+// DB Config
+const db = require('./config/keys').mongoURI;
+
 const GroceryDB = require("./models/index")
 
 
 // Define API routes here
 app.use(routes);
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/checkitout");
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/checkitout",    { useNewUrlParser: true }
+)
+.then(() => console.log('MongoDB Connected'))
+.catch(err => console.log(err));
 
+
+// Passport middleware
+app.use(passport.initialize());
+app.use(passport.session());
 // Send every other request to the React app
 // Define any API routes before this runs
 app.get("*", (req, res) => {

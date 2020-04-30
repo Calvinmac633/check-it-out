@@ -59,7 +59,7 @@ export function ListPage() {
                                 Enter the item name.
                   </Form.Text>
                         </Form.Group>
-                        <Button onClick={console.log("been clicked")} variant="primary" type="button">Add to list</Button>
+                        <Button onClick={() => handleFormSubmit} variant="primary" type="button">Add to list</Button>
                     </Form>
                     <Table striped bordered hover>
                         <thead>

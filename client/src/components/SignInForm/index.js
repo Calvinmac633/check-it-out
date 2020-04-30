@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -37,6 +37,18 @@ const useStyles = makeStyles((theme) => ({
 export default function SignInForm() {
   const classes = useStyles();
 
+  
+  const [login, setLogin] = useState({}),
+
+    handleInputChange = e => {
+        const { name, value } = e.target;
+        setLogin({...login, [name]: value })
+    },
+
+handleSubmit = e => {
+    e.preventDefault();
+
+  };
   return (
     <div>
     <Container component="main" maxWidth="xs">
@@ -48,19 +60,19 @@ export default function SignInForm() {
         <Typography component="h1" variant="h5">
           Sign in
         </Typography>
-        <form className={classes.form} noValidate>
-          <TextField
+        <form onSubmit={handleSubmit} className={classes.form}>
+          <TextField onChange={handleInputChange}
             variant="outlined"
             margin="normal"
             required
             fullWidth
-            id="email"
-            label="Email Address"
-            name="email"
-            autoComplete="email"
+            id="username"
+            label="Username"
+            name="username"
+            autoComplete="Username"
             autoFocus
           />
-          <TextField
+          <TextField onChange={handleInputChange}
             variant="outlined"
             margin="normal"
             required
@@ -75,9 +87,9 @@ export default function SignInForm() {
             control={<Checkbox value="remember" color="primary" />}
             label="Remember me"
           />
-          <Link href="/List">
+          {/* <Link href="/List"> */}
           <Button
-            // type="submit"
+            type="submit"
             fullWidth
             variant="contained"
             color="primary"
@@ -85,16 +97,11 @@ export default function SignInForm() {
           >
             Sign In
           </Button>
-          </Link>
-          
+          {/* </Link> */}
+        
           <Grid container>
-            <Grid item xs>
-              <Link href="#" variant="body2">
-                Forgot password?
-              </Link>
-            </Grid>
             <Grid item>
-              <Link href="#" variant="body2">
+              <Link href="/signup" variant="body2">
                 {"Don't have an account? Sign Up"}
               </Link>
             </Grid>
@@ -102,6 +109,65 @@ export default function SignInForm() {
         </form>
       </div>
     </Container>
-    </div>
+
+
+<Container component="main" maxWidth="xs">
+  <CssBaseline />
+  <div className={classes.paper}>
+    <Avatar className={classes.avatar}>
+      <LockOutlinedIcon />
+    </Avatar>
+    <Typography component="h1" variant="h5">
+      Sign in
+    </Typography>
+    <form onSubmit={handleSubmit} className={classes.form}>
+      <TextField onChange={handleInputChange}
+        variant="outlined"
+        margin="normal"
+        required
+        fullWidth
+        id="username"
+        label="Username"
+        name="username"
+        autoComplete="Username"
+        autoFocus
+      />
+      <TextField onChange={handleInputChange}
+        variant="outlined"
+        margin="normal"
+        required
+        fullWidth
+        name="password"
+        label="Password"
+        type="password"
+        id="password"
+        autoComplete="current-password"
+      />
+      <FormControlLabel
+        control={<Checkbox value="remember" color="primary" />}
+        label="Remember me"
+      />
+      {/* <Link href="/List"> */}
+      <Button
+        type="submit"
+        fullWidth
+        variant="contained"
+        color="primary"
+        className={classes.submit}
+      >
+        Sign In
+      </Button>
+      {/* </Link> */}
+    
+      <Grid container>
+        <Grid item>
+          <Link href="/signup" variant="body2">
+            {"Don't have an account? Sign Up"}
+          </Link>
+        </Grid>
+      </Grid>
+    </form>
+  </div>
+</Container>
+</div>
   );
-}
