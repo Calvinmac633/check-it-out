@@ -2,6 +2,7 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
 import PersonAddIcon from '@material-ui/icons/PersonAdd';
+import TextField from '@material-ui/core/TextField';
 function rand() {
   return Math.round(Math.random() * 20) - 10;
 }
@@ -21,10 +22,15 @@ const useStyles = makeStyles((theme) => ({
   paper: {
     position: 'absolute',
     width: 400,
-    backgroundColor: theme.palette.background.paper,
+    backgroundColor:"#f3c623",
     border: '2px solid #000',
     boxShadow: theme.shadows[5],
     padding: theme.spacing(2, 4, 3),
+    border: "5px solid white",
+    borderBottomLeftRadius: "5px",
+    borderBottomRightRadius: "5px",
+    borderTopLeftRadius: "5px",
+    borderTopRightRadius: "5px"
   },
 }));
 
@@ -44,18 +50,22 @@ export default function SimpleModal() {
 
   const body = (
     <div style={modalStyle} className={classes.paper}>
-      <h2 id="simple-modal-title">Text in a modal</h2>
-      <p id="simple-modal-description">
-        Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+      <h2 id="simple-modal-title"style={{ color:"white",fontSize: '60px', fontFamily: "londrina Shadow"}}>Invite or Add</h2>
+      <p id="simple-modal-description"style={{ color:"white",fontSize: '20px', fontFamily: "londrina Shadow"}}>
+        Enter email address of the person you want to share this list with
       </p>
-      <SimpleModal />
+      <TextField id="outlined-basic" label="email address" variant="outlined" />
+  
+      <button type="button" onClick={handleClose}style={{ color:"white",fontSize: '20px', fontFamily: "londrina Shadow"}}>
+        Add Person
+      </button>
     </div>
   );
 
   return (
     <div>
       <button type="button" onClick={handleOpen}>
-        Open Modal
+        Add Person
       </button>
       <Modal
         open={open}
