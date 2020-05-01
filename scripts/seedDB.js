@@ -10,11 +10,6 @@ mongoose.connect(
 );
 
 const seeds = [
-{
-  
-}
-
-
 
   
   {

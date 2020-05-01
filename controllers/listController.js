@@ -29,11 +29,17 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   findOne: function (req, res) {
+    console.log("This is req.params -->", req.params)
     db.GroceryDB
       // .findOne(req.query, codename: codename)
       // .findOne({ codename: req.params.codename}, req.body)
-      .findOne({ codename: "Turtle-Apple"}, req.body)
-      .then(dbModel => res.json(dbModel))
+      .findOne({ codename: "Turtle-Apple" })
+      .then(dbModel => {
+        console.log("This is dbModel ---> ",dbModel)
+        res.json(dbModel)
+      }
+
+      )
       .catch(err => res.status(422).json(err));
-  }, 
+  },
 };

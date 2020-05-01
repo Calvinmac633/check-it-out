@@ -15,12 +15,6 @@ const listSchema = new Schema({
     ]              
     //reference to User    
 });
-// const userSchema = new Schema({
-//     _id: { type: Schema.ObjectId, auto: true },
-//     userName: String,
-//     lists: [
-//         listSchema
-//     ]                  
-// });
+
 const GroceryDB = mongoose.model("GroceryDB", listSchema);
 module.exports = GroceryDB;
