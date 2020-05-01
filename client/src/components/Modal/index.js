@@ -48,7 +48,9 @@ export default function SimpleModal() {
       <p id="simple-modal-description">
         Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
       </p>
-      <SimpleModal />
+      <button type="button" onClick={handleClose}>
+        Open Modal
+      </button>
     </div>
   );
 

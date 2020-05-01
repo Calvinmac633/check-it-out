@@ -16,6 +16,9 @@ import {Signin} from "./pages/Signin"
 import 'font-awesome/css/font-awesome.min.css';
 import Lookup from "./components/Lookup";
 
+import {PublicListPage} from "./pages/PublicListPage"
+
+
 function App() {
   return (
     <div>
@@ -27,8 +30,8 @@ function App() {
           <Route path='/signin'>
             <Signin />
           </Route>
-          <Route path='/List'>
-            <ListPage />
+          <Route path='/List/:codename'>
+            <PublicListPage />
           </Route>
           <Route path='/Lookup'>
             <Lookup />

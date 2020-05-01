@@ -75,7 +75,7 @@ export default function SignInForm() {
             control={<Checkbox value="remember" color="primary" />}
             label="Remember me"
           />
-          <Link href="/List">
+          <Link href="/List/:codename">
           <Button
             // type="submit"
             fullWidth

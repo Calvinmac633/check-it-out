@@ -8,6 +8,7 @@ import NativeSelect from '@material-ui/core/NativeSelect';
 import InputBase from '@material-ui/core/InputBase';
 import Button from '@material-ui/core/Button';
 import AppBar from "../AppBar";
+import "./style.css"
 
 const BootstrapInput = withStyles((theme) => ({
   root: {
@@ -57,32 +58,36 @@ export default function Lookup() {
     setAge(event.target.value);
   };
   return (
-    <div> 
-    <AppBar link1="/" text1="Log out"/>
     <div>
-      <FormControl className={classes.margin}>
-        <InputLabel htmlFor="demo-customized-textbox">List Name</InputLabel>
-        <BootstrapInput id="demo-customized-textbox" />
-      </FormControl>
-      <FormControl className={classes.margin}>
-        <InputLabel htmlFor="demo-customized-select-native">Select</InputLabel>
-        <NativeSelect
-          id="demo-customized-select-native"
-          value={age}
-          onChange={handleChange}
-          input={<BootstrapInput />}
-        >
-          <option aria-label="None" value="" />
-          <option value={10}>Search List</option>
-          <option value={20}>Create List </option>
-        </NativeSelect>
-      </FormControl>
-      <div> 
-      <Button variant="contained" color="primary">
-        Check it out 
-      </Button>
+      <AppBar link1="/" text1="Log out" />
+      <div>
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Special title treatment</h5>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+
+              <div class="form-group">
+                <label for="exampleInputEmail1">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" />
+                  <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
   </div>
-    </div>
-    </div>
+
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Special title treatment</h5>
+                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
   );
 }
