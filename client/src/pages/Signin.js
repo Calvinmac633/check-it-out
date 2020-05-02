@@ -8,7 +8,7 @@ import AppBar from "../components/AppBar"
 export function Signin() {
     return (
         <div>
-            <AppBar link1="/signup" text1="Sign up" link2="/signin" text2="Sign in" />
+            <AppBar />
             <SignInForm />
         </div>
 

@@ -1,68 +1,51 @@
 const mongoose = require("mongoose");
 const db = require("../models");
-
 // This file empties the Books collection and inserts the books below
-
 mongoose.connect(
   process.env.MONGODB_URI ||
   "mongodb://localhost/checkitout"
   //put in our DB
 );
-
 const seeds = [
   {
     userName: "Calvin",
-    List: [{
-      _id: "randomcode",
-      itemSchema: [{
-        name: "Milk",
-        quantity: "1",
-        purchased: false
-      },
-      {
-        name: "Cereal",
-        quantity: "3",
-        purchased: false
-      },
-      {
-        name: "Ham",
-        quantity: "2",
-        purchased: false
-      },
-      {
-        name: "Eggs",
-        quantity: "100",
-        purchased: false
-      },
-      {
-        name: "Tofu",
-        quantity: "1",
-        purchased: false
-      },
-      {
-        name: "Salad",
-        quantity: "5",
-        purchased: false
-      },
-    ]
-    },
-    {
-      _id: "another-code",
-      itemSchema: [{
-        name: "Vodka",
-        quantity: "2",
-        purchased: false
-      },
-      {
-        name: "Beers",
-        quantity: "30",
+    lists: [{
+      codename: "Cat-Banana",
+      listname: "Grocery List",
+      items: [{
+        name: "Yogurt",
+        quantity: 200,
         purchased: false
       }]
-    }],
-
+    },
+    {
+      codename: "Dog-Pear",
+      listname: "Target List",
+      items: [{
+        name: "Vacuum",
+        quantity: 1,
+        purchased: false
+      },
+      {
+        name: "Paper Towel",
+        quantity: 6,
+        purchased: false
+      }]
+    }]
+  },
+  {
+    userName: "Zoey",
+    lists: [{
+      codename: "Turtle-Apple",
+      listname: "Food List",
+      items: [{
+        name: "Cereal",
+        quantity: 3,
+        purchased: false
+      }]
+    }]
   }
 ];
-
 db.GroceryDB
   .deleteMany({})
   .then(() => db.GroceryDB.collection.insertMany(seeds))

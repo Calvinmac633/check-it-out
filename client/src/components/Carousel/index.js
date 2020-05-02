@@ -4,14 +4,15 @@ import Slide2 from '../../images/Slide4.png';
 import Slide3 from '../../images/Slide3.png';
 import { Button, Carousel } from 'react-bootstrap';
 import AppBar from "../AppBar";
+import "./Carousel.css";
+
 function ControlledCarousel() {
   return (
     <div>
      <AppBar link1="/signup" text1="Sign up" link2="/signin" text2="Sign in"/>
       <div className="container">
-      <Carousel style={{  width: 900,
-        height:500, overflow: 'hidden',
-        margin: 'auto'}}>
+      
+      <Carousel className= "" >
       <Carousel.Item>
         <img
           className="d-block w-100"
@@ -19,8 +20,8 @@ function ControlledCarousel() {
             alt="First slide"
         />
         <Carousel.Caption style={{ bottom: '20%' }}>
-          <h3>First slide label</h3>
-            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+        <h3>Second slide label</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
@@ -31,8 +32,6 @@ function ControlledCarousel() {
         />
     
         <Carousel.Caption style={{ bottom: '20%' }}>
-          <h3>Second slide label</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
@@ -43,17 +42,18 @@ function ControlledCarousel() {
         />
     
         <Carousel.Caption style={{ bottom: '20%' }}>
-          <h3>Third slide label</h3>
-          <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
         </Carousel.Caption>
       </Carousel.Item>
       </Carousel>
 
       <div className="container my-5 text-center">
-        <Button variant="primary" size="lg" onClick={() => {
-          window.location = "/signup";
-        }} block style={{ width: 200, margin: 'auto' }}>
-         Signup
+        <Button variant="" size="lg" onClick={() => {
+          window.location = "/lookup";
+        }} block style={{ width: 200, margin: 'auto',color: '#856c8b',fontSize: '50px', fontFamily:"londrina Shadow",backgroundColor:"#fcf8f3",borderBottomLeftRadius: "5px",
+        borderBottomRightRadius: "5px",
+        borderTopLeftRadius: "5px",
+        borderTopRightRadius: "5px", border: "5px solid #856c8b"}}>
+         Sign up
       </Button>
       </div>
       
