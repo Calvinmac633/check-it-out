@@ -61,28 +61,28 @@ export default function Lookup() {
     <div>
       <AppBar link1="/" text1="Log out" />
       <div>
-        <div class="row">
-          <div class="col-sm-6">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">Special title treatment</h5>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+        <div className="row">
+          <div className="col-sm-6">
+            <div className="card">
+              <div className="card-body">
+                <h5 className="card-title">Special title treatment</h5>
+                <a href="#" className="btn btn-primary">Go somewhere</a>
               </div>
 
-              <div class="form-group">
+              <div className="form-group">
                 <label for="exampleInputEmail1">Email address</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" />
-                  <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" />
+                  <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
   </div>
 
               </div>
             </div>
-            <div class="col-sm-6">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">Special title treatment</h5>
-                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
+            <div className="col-sm-6">
+              <div className="card">
+                <div className="card-body">
+                  <h5 className="card-title">Special title treatment</h5>
+                  <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                  <a href="#" className="btn btn-primary">Go somewhere</a>
                 </div>
               </div>
             </div>

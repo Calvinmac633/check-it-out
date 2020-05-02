@@ -15,12 +15,12 @@ const seeds = [
     codename: "Turtle-Apple",
     listname: "Food List",
     items: [{
-      name: "Cereal",
+      itemName: "Cereal",
       quantity: 3,
       purchased: false
     },
     {
-      name: "Milk",
+      itemName: "Milk",
       quantity: 3,
       purchased: false
     }]
@@ -29,7 +29,7 @@ const seeds = [
     codename: "Cat-Banana",
     listname: "Grocery List",
     items: [{
-      name: "Yogurt",
+      itemName: "Yogurt",
       quantity: 200,
       purchased: false
     }]

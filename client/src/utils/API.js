@@ -5,8 +5,13 @@ export default {
     console.log(codename)
     return axios.get("/api/List/" + codename);
   },
-  // saveList: function(listData) {
-  //   return axios.post("/api/List", listData)
+  addItem: function(codename, listData) {
+    console.log(codename)
+    return axios.put("/api/List/" + codename, listData)
+  }
+  // addItem: function(listData) {
+  //   // console.log(listData)
+  //   return axios.put("/api/List/", listData)
   // }
 
 };

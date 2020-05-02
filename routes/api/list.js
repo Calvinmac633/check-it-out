@@ -5,6 +5,7 @@ const listController = require("../../controllers/listController");
 router
   .route("/:codename")
   .get(listController.findOne)
-  .post(listController.create);
+  .post(listController.create)
+  .put(listController.findOneAndUpdate);
 
 module.exports = router;
