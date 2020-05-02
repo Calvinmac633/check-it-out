@@ -4,11 +4,13 @@ import Typography from '@material-ui/core/Typography';
 
 function Copyright() {
   return (
-    <footer className="pt-4 my-md-5 pt-md-5 border-top">
-      <Typography variant="body2" color="textSecondary" align="center">
+
+    <footer class="" style={{backgroundColor:"#b9ebcc"}}>
+      <Typography variant="body2" color="textSecondary" align="center"style={{color: 'grey', fontSize: '20px', fontFamily:"londrina Shadow"}}>
+
         {'Copyright © '}
-        <Link color="inherit" href="https://material-ui.com/">
-          Your Website
+        <Link color="inherit">
+          Check it Out
         </Link>{' '}
         {new Date().getFullYear()}
         {'.'}

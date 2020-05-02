@@ -7,9 +7,11 @@ import API from "../utils/API"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheck } from '@fortawesome/free-solid-svg-icons'
 import AppBar from "../components/AppBar"
+
 import CreateListForm from "../components/CreateListForm"
 // import codename from ZOEYTHING
 const codename = "Turtle-Apple";
+import Modal from "../components/Modal";
 
 export function ListPage() {
     // const [formObject, setFormObject] = useState([]);
@@ -44,6 +46,7 @@ export function ListPage() {
     // const listResult = list.find( ({ listname }) => listname === "Target List");
 
     return (
+
         state.currentList.codename !==0 ? (<div>
             <AppBar link1="/signup" text1="Sign up" link2="/signin" text2="Sign in" />
             <main role="main">

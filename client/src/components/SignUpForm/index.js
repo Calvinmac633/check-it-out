@@ -19,17 +19,26 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
+    border: "5px solid #856c8b",
+    backgroundColor: "#fcf8f3",
+    borderBottomLeftRadius: "5px",
+    borderBottomRightRadius: "5px",
+    borderTopLeftRadius: "5px",
+    borderTopRightRadius: "5px"
   },
   avatar: {
     margin: theme.spacing(1),
-    backgroundColor: theme.palette.secondary.main,
+    backgroundColor:"#856c8b",
   },
   form: {
-    width: '100%', // Fix IE 11 issue.
+    width: '80%', // Fix IE 11 issue.
     marginTop: theme.spacing(3),
   },
   submit: {
     margin: theme.spacing(3, 0, 2),
+    color: "#856c8b",
+    fontFamily: "londrina Shadow",
+    fontSize: '25px'
   },
 }));
 
@@ -102,14 +111,14 @@ export default function SignUpForm() {
             type="submit"
             fullWidth
             variant="contained"
-            color="primary"
+            color="#856c8b"
             className={classes.submit}
           >
             Sign Up
           </Button>
           <Grid container justify="flex-end">
             <Grid item xs={12} align="center">
-              <Link href="#" variant="body2">
+              <Link href="#" variant="body2"style={{ color:"#856c8b",fontSize: '20px', fontFamily: "londrina Shadow"}}>
                 Already have an account? Sign in
               </Link>
             </Grid>
