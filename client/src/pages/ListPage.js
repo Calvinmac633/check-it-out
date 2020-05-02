@@ -47,7 +47,7 @@ export function ListPage() {
 
     return (
         <div>
-      <AppBar link1="/" text1="Log out">
+      <AppBar link1="/" text1="Gotta Blast">
       <Modal/>
       </AppBar>
         <main role="main">
