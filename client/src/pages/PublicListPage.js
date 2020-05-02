@@ -15,18 +15,33 @@ export function PublicListPage() {
     // const {codename} = useParams()
     useEffect(() => {
         API.getList(codename)
-          .then(res => console.log(res))
-        //   .then(res => setList(res.data))
-          .catch(err => console.log(err));
-      }, [])
+            //   .then(res => console.log(res.data))
+            .then(res => {
+                console.log("this is list BEFORE set list is called ", list) 
+                setList(res.data)
+                console.log("this is list AFTER set list is called ", list)
+            })
+            .catch(err => console.log(err));
+    }, [])
 
 
+    
     return (
-        <div>
-            <h1>
-                {console.log(list)}
-            </h1>
-        </div>
+        
+        (list.length !== 0 ? (
+        <p>{console.log(list.items[0])}{list.items[0].name}</p>
+
+        // !list ? (
+        //     <div>
+        //     <h1>
+        //         {console.log(list)}
+        //     </h1>
+        // </div>
+        // ) : <h1>nothing to displayyy</h1>
+
+
+        ): null)
     );
+    
 
 }

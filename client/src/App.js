@@ -31,7 +31,7 @@ function App() {
             <Signin />
           </Route>
           <Route path='/List/:codename'>
-            <PublicListPage />
+            <ListPage />
           </Route>
           <Route path='/Lookup'>
             <Lookup />

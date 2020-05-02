@@ -12,26 +12,17 @@ export function ListPage() {
     const [list, setList] = useState([]);
     const [formObject, setFormObject] = useState([]);
 
-    // NEWEST THING ADDED
     // const {codename} = useParams()
-    // useEffect(() => {
-    //     API.getList(codename)
-    //       .then(res => setBook(res.data))
-    //       .catch(err => console.log(err));
-    //   }, [])
-
     useEffect(() => {
-        loadList()
-    }, [])
-
-    function loadList() {
-        console.log(codename)
         API.getList(codename)
-            .then(res =>
-                setList(res.data),
-            )
+            //   .then(res => console.log(res.data))
+            .then(res => {
+                console.log("this is list BEFORE set list is called ", list)
+                setList(res.data)
+                console.log("this is list AFTER set list is called ", list)
+            })
             .catch(err => console.log(err));
-    }
+    }, [])
 
 
 
@@ -50,7 +41,7 @@ export function ListPage() {
             API.saveList({
                 name: formObject.name,
             })
-                .then(res => loadList())
+                .then(res => res.json)
                 .catch(err => console.log(err));
         }
     };
@@ -59,93 +50,55 @@ export function ListPage() {
 
     // const listResult = list.find( ({ listname }) => listname === "Target List");
 
-
     return (
-        <div>
-            <AppBar link1="/signup" text1="Sign up" link2="/signin" text2="Sign in" />
-            <main role="main">
+        (list.length !== 0 ? (
+            <div>
+                <AppBar link1="/signup" text1="Sign up" link2="/signin" text2="Sign in" />
+                <main role="main">
 
-                <section class="jumbotron text-left">
-                    <div class="container">
-                        <Form>
-                            <Form.Group controlId="formSearch">
-                                <Form.Control onChange={() => handleInputChange()} name="name" type="text" placeholder="Add item" />
-                                <Form.Text className="text-muted">
-                                    Enter the item name.
-                  </Form.Text>
-                            </Form.Group>
-                            <Button onClick={() => handleFormSubmit()} variant="primary" type="button">Add to list</Button>
-                        </Form>
-                        <div>
+                    <section class="jumbotron text-left">
+                        <div class="container">
+                            <Form>
+                                <Form.Group controlId="formSearch">
+                                    <Form.Control onChange={() => handleInputChange()} name="name" type="text" placeholder="Add item" />
+                                    <Form.Text className="text-muted">
+                                        Enter the item name.
+                                    </Form.Text>
+                                </Form.Group>
+                                <Button onClick={() => handleFormSubmit()} variant="primary" type="button">Add to list</Button>
+                            </Form>
+                            <div>
 
+                            </div>
+                            {console.log("---------------This is List Object-----------")}
+                            {console.log(list)}
+                            <Table striped bordered hover>
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Item</th>
+                                        <th>Quantitiy</th>
+                                        <th>Purchased?</th>
+                                    </tr>
+                                    {console.log(list)}
+                                </thead>
+                                <tbody>
+                                    {list.items.map(item =>
+                                        <tr>
+                                            <td>{count++}</td>
+                                            <td>{item.name}</td>
+                                            <td>{item.quantity}</td>
+                                            <td>{item.purchased}</td>
+                                        </tr>
+                                    )}
+
+                                </tbody>
+                            </Table>
                         </div>
-                        {console.log("---------------This is List Object-----------")}
-                        {console.log(list)}
-                        <Table striped bordered hover>
-                            <thead>
-                                <tr>
-                                    <th>#</th>
-                                    <th>Item</th>
-                                    <th>Quantitiy</th>
-                                    <th>Purchased?</th>
-                                </tr>
-                                {console.log(list)}
-                            </thead>
-
-                            {list.length > 0 ? (
-
-
-
-                                // list.map(user => {
-                                //     console.log("---------This is User----------------")
-                                //     console.log(user)
-                                //     return (
-                                //         <div>
-
-                                list.lists.map(list => {
-                                    console.log("---------This is List----------------")
-                                    console.log(list)
-                                    return (
-                                        <tbody>
-
-                                            {
-                                                list.items.map(item => {
-                                                    console.log("---------This is Item----------------")
-                                                    console.log(item)
-                                                    return (
-                                                        <tr key={item._id}>
-                                                            <td>{count++}</td>
-                                                            <td>{item.name}</td>
-                                                            <td>{item.quantity}</td>
-                                                            <td>
-                                                                <Button>
-                                                                    <FontAwesomeIcon icon={faCheck}>
-                                                                        {item.purchased}</FontAwesomeIcon>
-                                                                </Button>
-                                                            </td>
-                                                        </tr>
-                                                    )
-                                                })
-                                            }
-                                        </tbody>
-                                    )
-
-
-                                })
-
-
-                                //         </div>)
-                                // })
-
-                            ) : (<p>No results to display</p>)}
-
-                        </Table>
-
-                    </div>
-                </section>
-            </main>
-
-        </div>
+                    </section>
+                </main>
+            </div>
+        ) : null)
     );
 
 }

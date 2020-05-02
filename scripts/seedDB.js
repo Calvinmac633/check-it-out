@@ -11,47 +11,32 @@ mongoose.connect(
 
 const seeds = [
 
-  
   {
-    userName: "Calvin",
-    lists: [{
-      codename: "Cat-Banana",
-      listname: "Grocery List",
-      items: [{
-        name: "Yogurt",
-        quantity: 200,
-        purchased: false
-      }]
+    codename: "Turtle-Apple",
+    listname: "Food List",
+    items: [{
+      name: "Cereal",
+      quantity: 3,
+      purchased: false
     },
     {
-      codename: "Dog-Pear",
-      listname: "Target List",
-      items: [{
-        name: "Vacuum",
-        quantity: 1,
-        purchased: false
-      },
-      {
-        name: "Paper Towel",
-        quantity: 6,
-        purchased: false
-      }]
+      name: "Milk",
+      quantity: 3,
+      purchased: false
     }]
   },
   {
-    userName: "Zoey",
-    lists: [{
-      codename: "Turtle-Apple",
-      listname: "Food List",
-      items: [{
-        name: "Cereal",
-        quantity: 3,
-        purchased: false
-      }]
+    codename: "Cat-Banana",
+    listname: "Grocery List",
+    items: [{
+      name: "Yogurt",
+      quantity: 200,
+      purchased: false
     }]
   }
-];
 
+
+]
 db.GroceryDB
   .deleteMany({})
   .then(() => db.GroceryDB.collection.insertMany(seeds))
