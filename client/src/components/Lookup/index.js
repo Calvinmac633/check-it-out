@@ -1,88 +1,148 @@
 import React from 'react';
-import { makeStyles, withStyles } from '@material-ui/core/styles';
-import InputLabel from '@material-ui/core/InputLabel';
-import MenuItem from '@material-ui/core/MenuItem';
-import FormControl from '@material-ui/core/FormControl';
-import Select from '@material-ui/core/Select';
-import NativeSelect from '@material-ui/core/NativeSelect';
-import InputBase from '@material-ui/core/InputBase';
+import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import TextField from '@material-ui/core/TextField';
+import Link from '@material-ui/core/Link';
+import Grid from '@material-ui/core/Grid';
+import Typography from '@material-ui/core/Typography';
+import { makeStyles } from '@material-ui/core/styles';
+import Container from '@material-ui/core/Container';
+import AssignmentIcon from '@material-ui/icons/Assignment';
 import AppBar from "../AppBar";
 
-const BootstrapInput = withStyles((theme) => ({
-  root: {
-    'label + &': {
-      marginTop: theme.spacing(3),
-    },
-  },
-  input: {
-    borderRadius: 4,
-    position: 'relative',
-    backgroundColor: theme.palette.background.paper,
-    border: '1px solid #ced4da',
-    fontSize: 16,
-    padding: '10px 26px 10px 12px',
-    transition: theme.transitions.create(['border-color', 'box-shadow']),
-    // Use the system font instead of the default Roboto font.
-    fontFamily: [
-      '-apple-system',
-      'BlinkMacSystemFont',
-      '"Segoe UI"',
-      'Roboto',
-      '"Helvetica Neue"',
-      'Arial',
-      'sans-serif',
-      '"Apple Color Emoji"',
-      '"Segoe UI Emoji"',
-      '"Segoe UI Symbol"',
-    ].join(','),
-    '&:focus': {
-      borderRadius: 4,
-      borderColor: '#80bdff',
-      boxShadow: '0 0 0 0.2rem rgba(0,123,255,.25)',
-    },
-  },
-}))(InputBase);
-
 const useStyles = makeStyles((theme) => ({
-  margin: {
-    margin: theme.spacing(1),
+  paper: {
+    marginTop: theme.spacing(8),
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    border: "5px solid #856c8b",
+    backgroundColor: "#fcf8f3",
+    borderBottomLeftRadius: "5px",
+    borderBottomRightRadius: "5px",
+    borderTopLeftRadius: "5px",
+    borderTopRightRadius: "5px"
   },
+  avatar: {
+    margin: theme.spacing(1),
+    backgroundColor: "#856c8b"
+  },
+  form: {
+    width: '80%', // Fix IE 11 issue.
+    marginTop: theme.spacing(1),
+    color: "#856c8b"
+  },
+  submit: {
+    margin: theme.spacing(3, 0, 2),
+    color: "#856c8b",
+    fontFamily: "londrina Shadow",
+    fontSize: '25px'
+  },
+  display: {
+    display: "flex",
+    marginBottom:"200px",
+  }
 }));
 
-export default function Lookup() {
+export default function SignInForm() {
   const classes = useStyles();
-  const [age, setAge] = React.useState('');
-  const handleChange = (event) => {
-    setAge(event.target.value);
-  };
+
   return (
-    <div> 
-    <AppBar link1="/" text1="Log out"/>
     <div>
-      <FormControl className={classes.margin}>
-        <InputLabel htmlFor="demo-customized-textbox">List Name</InputLabel>
-        <BootstrapInput id="demo-customized-textbox" />
-      </FormControl>
-      <FormControl className={classes.margin}>
-        <InputLabel htmlFor="demo-customized-select-native">Select</InputLabel>
-        <NativeSelect
-          id="demo-customized-select-native"
-          value={age}
-          onChange={handleChange}
-          input={<BootstrapInput />}
-        >
-          <option aria-label="None" value="" />
-          <option value={10}>Search List</option>
-          <option value={20}>Create List </option>
-        </NativeSelect>
-      </FormControl>
-      <div> 
-      <Button variant="contained" color="primary">
-        Check it out 
-      </Button>
-  </div>
+      <AppBar />
+      <div className={classes.display}>
+        <Container component="main" maxWidth="xs">
+          <CssBaseline />
+          <div className={classes.paper}>
+            <Avatar className={classes.avatar}>
+              <AssignmentIcon />
+            </Avatar>
+            <Typography component="h1" variant="h5" style={{ fontSize: '50px', fontFamily: "londrina Shadow" }}>
+              Create a New List
+        </Typography>
+            <form className={classes.form} noValidate>
+              <TextField
+                variant="outlined"
+                margin="normal"
+                required
+                fullWidth
+                id="listname"
+                label="Enter List Name"
+                name="email"
+                autoComplete="email"
+                autoFocus
+              />
+
+              <Link href="/List">
+                <Button
+                  // type="submit"
+                  fullWidth
+                  variant="contained"
+                  color=""
+                  className={classes.submit}
+                >
+                  Let's Create
+          </Button>
+              </Link>
+
+              <Grid container>
+                <Grid item xs>
+
+                </Grid>
+                <Grid item>
+
+                </Grid>
+              </Grid>
+            </form>
+          </div>
+        </Container>
+        <Container component="main" maxWidth="xs">
+          <CssBaseline />
+          <div className={classes.paper}>
+            <Avatar className={classes.avatar}>
+              <AssignmentIcon />
+            </Avatar>
+            <Typography component="h1" variant="h5" style={{ fontSize: '50px', fontFamily: "londrina Shadow" }}>
+              Search Existing List
+        </Typography>
+            <form className={classes.form} noValidate>
+              <TextField
+                variant="outlined"
+                margin="normal"
+                required
+                fullWidth
+                id="codename"
+                label="Enter Code Name"
+                name="email"
+                autoComplete="email"
+                autoFocus
+              />
+
+
+              <Link href="/List">
+                <Button
+                  // type="submit"
+                  fullWidth
+                  variant="contained"
+                  color=""
+                  className={classes.submit}
+                >
+                  Let's Search
+          </Button>
+              </Link>
+
+              <Grid container>
+                <Grid item xs>
+                </Grid>
+                <Grid item>
+                </Grid>
+              </Grid>
+            </form>
+          </div>
+        </Container>
+      </div>
     </div>
-    </div>
+
   );
 }

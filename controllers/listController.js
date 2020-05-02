@@ -7,4 +7,12 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   }
+
+//findByCodename
+  // findAll: function (req, res) {
+  //   db.GroceryDB
+  //     .find(req.query)
+  //     .then(dbModel => res.json(dbModel))
+  //     .catch(err => res.status(422).json(err));
+  // }
 };

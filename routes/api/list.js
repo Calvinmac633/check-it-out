@@ -5,5 +5,7 @@ const listController = require("../../controllers/listController");
 router.route("/")
   .get(listController.findAll)
 
+  ///find by codename
+  
 
 module.exports = router;

@@ -4,7 +4,9 @@ import API from "../utils/API"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheck } from '@fortawesome/free-solid-svg-icons'
 import AppBar from "../components/AppBar"
+import Modal from "../components/Modal";
 
+codename ="pizza-place"
 export function ListPage() {
     const [list, setList] = useState([]);
     const [formObject, setFormObject] = useState([]);
@@ -14,7 +16,7 @@ export function ListPage() {
     }, [])
 
     function loadList() {
-        API.getList()
+        API.getList(codename)
             .then(res =>
                 setList(res.data)
             )
@@ -47,7 +49,9 @@ export function ListPage() {
 
     return (
         <div>
-        <AppBar link1="/signup" text1="Sign up" link2="/signin" text2="Sign in" />
+      <AppBar link1="/" text1="Gotta Blast">
+      <Modal/>
+      </AppBar>
         <main role="main">
 
             <section class="jumbotron text-left">
@@ -70,7 +74,7 @@ export function ListPage() {
                                 <th>Purchased?</th>
                             </tr>
                         </thead>
-                        {list.map(list => {
+                        {/* {list.map(list => {
                             return (
                                 <tbody>
                                     {list.List[0].itemSchema.map(item => {
@@ -91,7 +95,7 @@ export function ListPage() {
                                     })}
                                 </tbody>
                             )
-                        })}
+                        })} */}
                     </Table>
 
                 </div>

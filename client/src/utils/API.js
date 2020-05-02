@@ -1,11 +1,11 @@
 import axios from "axios";
 export default {
   // Gets list
-  getList: function() {
-    return axios.get("/api/List");
+  getList: function(codename) {
+    return axios.get("/api/list/" + codename);
   },
   saveList: function(listData) {
-    return axios.post("/api/List", listData)
+    return axios.post("/api/list", listData)
   }
 
 };
