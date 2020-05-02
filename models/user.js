@@ -1,21 +1,20 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const itemSchema = new Schema({
-    _id: { type: Schema.ObjectId, auto: true },
-    name: String,
-    quantity: Number,
-    purchased: Boolean
-})
 
-const userSchema = new Schema({
-    userName: String,
-    List: [
-        itemSchema
-    ]                  
+const listSchema = new Schema({
+    codename: String,
+    listname: String,
+    items: [
+        {
+            _id: { type: Schema.ObjectId, auto: true }, // --> THIS IS NOT WORKING
+            itemName: String,
+            quantity: Number,
+            purchased: Boolean
+        }
+    ]
+    //reference to User?    
 });
 
-
-const GroceryDB = mongoose.model("GroceryDB", userSchema);
-
+const GroceryDB = mongoose.model("GroceryDB", listSchema);
 module.exports = GroceryDB;

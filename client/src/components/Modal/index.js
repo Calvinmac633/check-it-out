@@ -60,12 +60,13 @@ export default function SimpleModal() {
       <p id="simple-modal-description"style={{ color:"#856c8b",fontSize: '20px', fontFamily: "londrina Shadow"}}>
         Enter email address of the person you want to share this list with
       </p>
+
       <TextField id="outlined-basic" label="email address" variant="outlined" className={classes.text} />
      
   
       <button type="button" onClick={handleClose}style={{ color:"black",fontSize: '30px', fontFamily: "londrina Shadow"}}>
         Add Person
-        
+
       </button>
     </div>
   );
