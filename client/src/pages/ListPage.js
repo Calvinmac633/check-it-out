@@ -10,10 +10,11 @@ import AppBar from "../components/AppBar"
 
 import CreateListForm from "../components/CreateListForm"
 // import codename from ZOEYTHING
-const codename = "Turtle-Apple";
-import Modal from "../components/Modal";
+// import Modal from "../components/Modal";
 
 export function ListPage() {
+const {codename} = useParams();
+
     // const [formObject, setFormObject] = useState([]);
 
     const [state, dispatch] = useStoreContext();
