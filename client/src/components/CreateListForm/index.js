@@ -8,9 +8,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheck } from '@fortawesome/free-solid-svg-icons'
 import AppBar from "../AppBar"
 // import codename from ZOEYTHING
-const codename = "Turtle-Apple";
+// const codename = "Turtle-Apple";
 
 function CreateListForm() {
+  const {codename} = useParams();
   const nameRef = useRef();
   // const bodyRef = useRef();
   // const authorRef = useRef();
