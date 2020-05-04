@@ -69,9 +69,9 @@ export default function SignInForm() {
                 fullWidth
                 id="listname"
                 label="Enter List Name"
-                name="email"
-                autoComplete="email"
-                autoFocus
+                name="List Name"
+                autoFocus              
+                
               />
 
               <Link href="/List">
@@ -114,8 +114,7 @@ export default function SignInForm() {
                 fullWidth
                 id="codename"
                 label="Enter Code Name"
-                name="email"
-                autoComplete="email"
+                name="Code Name"
                 autoFocus
               />
 

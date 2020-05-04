@@ -35,7 +35,7 @@ const useStyles = makeStyles((theme) => ({
   },
   text:{
     boxSizing:"10px",
-
+    
   }
 }));
 
@@ -63,7 +63,12 @@ export default function SimpleModal() {
       <TextField id="outlined-basic" label="email address" variant="outlined" className={classes.text} />
      
   
-      <button type="button" onClick={handleClose}style={{ color:"black",fontSize: '30px', fontFamily: "londrina Shadow"}}>
+      <button type="button" onClick={handleClose} block style={{
+                                width: 180, margin: 'auto', color: '#856c8b', fontSize: '30px', fontFamily: "londrina Shadow", backgroundColor: "#dee3e2", borderBottomLeftRadius: "5px",
+                                borderBottomRightRadius: "5px",
+                                borderTopLeftRadius: "5px",
+                                borderTopRightRadius: "5px", border: "5px solid #856c8b"
+                            }}>
         Add Person
         
       </button>
