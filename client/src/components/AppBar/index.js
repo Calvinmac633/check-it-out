@@ -18,10 +18,12 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "center",
     fontSize: '65px',
     fontFamily:'Londrina Shadow',
+    float:"Right",
   },
   appBar: {
    height: "75px",
-   backgroundColor: "#f3c623"
+   backgroundColor: "#f3c623",
+  
   }
  
 }));
