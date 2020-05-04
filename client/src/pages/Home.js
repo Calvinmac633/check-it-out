@@ -12,7 +12,9 @@ export function Home() {
 
     return (
         <div>
+
             <Gif />
+
         </div>
     );
 

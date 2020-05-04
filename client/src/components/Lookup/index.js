@@ -10,6 +10,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import AssignmentIcon from '@material-ui/icons/Assignment';
 import AppBar from "../AppBar";
+import "./style.css"
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -50,6 +51,7 @@ export default function SignInForm() {
 
   return (
     <div>
+
       <AppBar />
       <div className={classes.display}>
         <Container component="main" maxWidth="xs">
@@ -142,6 +144,7 @@ export default function SignInForm() {
         </Container>
       </div>
     </div>
+
 
   );
 }
