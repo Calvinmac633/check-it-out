@@ -5,7 +5,11 @@ const listController = require("../../controllers/listController");
 router
   .route("/:codename")
   .get(listController.findOne)
-  .post(listController.create)
-  .put(listController.findOneAndUpdate);
+  // .post(listController.create)
+  .put(listController.findOneAndUpdate)
+
+  router
+  .route("/:codename/:id")
+  .put(listController.remove);
 
 module.exports = router;
