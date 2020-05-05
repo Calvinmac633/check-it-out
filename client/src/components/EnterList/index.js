@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from "react";
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -12,6 +12,10 @@ import AssignmentIcon from '@material-ui/icons/Assignment';
 import AppBar from "../AppBar";
 import "./style.css"
 import API from '../../utils/API';
+import { REMOVE_LIST, UPDATE_LISTS, LOADING, SET_CURRENT_LIST, ADD_LIST } from "../../utils/actions"
+import { useStoreContext } from "../../utils/GlobalState";
+import { useParams } from "react-router-dom";
+
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -46,16 +50,34 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: "200px",
   }
 }));
-
 export default function SignInForm() {
   const classes = useStyles();
-
+  const listNameRef = useRef();
+  const { listname } = useParams();
+  const [state, dispatch] = useStoreContext();
+  const handleSubmit = e => {
+    // e.preventDefault();
+    dispatch({ type: LOADING });
+    console.log("current listname", listNameRef.current.value)
+    API.createList({
+      listname: listNameRef.current.value
+    }).then(res => console.log(
+      "THIS IS CREATELIST RES.DATA", res.data));
+  }
+  //     .then(result => {
+  //       console.log("THIS IS THE API CLICK RESULT", result)
+  //       dispatch({
+  //         type: UPDATE_LISTS,
+  //         list: result.data
+  //       });
+  //     })
+  //     .catch(err => console.log(err));
+  //   nameRef.current.value = "";
+  //   //   bodyRef.current.value = "";
+  // };
   // the below is temporary code to demonstrate that the endpoint is working
-  API.createList('mackerel').then(res => console.log(res.data));
-
   return (
     <div>
-
       <AppBar />
       <div className={classes.display}>
         <Container component="main" maxWidth="xs">
@@ -69,6 +91,7 @@ export default function SignInForm() {
         </Typography>
             <form className={classes.form} noValidate>
               <TextField
+                ref={listNameRef}
                 variant="outlined"
                 margin="normal"
                 required
@@ -76,12 +99,11 @@ export default function SignInForm() {
                 id="listname"
                 label="Enter List Name"
                 name="List Name"
-                autoFocus              
-                
+                autoFocus
+                type="value"
               />
-
               <Button
-                // type="submit"
+                onClick={handleSubmit}
                 fullWidth
                 variant="contained"
                 color=""
@@ -89,13 +111,10 @@ export default function SignInForm() {
               >
                 Let's Create
           </Button>
-
               <Grid container>
                 <Grid item xs>
-
                 </Grid>
                 <Grid item>
-
                 </Grid>
               </Grid>
             </form>
@@ -121,8 +140,6 @@ export default function SignInForm() {
                 name="Code Name"
                 autoFocus
               />
-
-
               <Link href="/List">
                 <Button
                   // type="submit"
@@ -134,7 +151,6 @@ export default function SignInForm() {
                   Let's Search
           </Button>
               </Link>
-
               <Grid container>
                 <Grid item xs>
                 </Grid>
@@ -146,7 +162,5 @@ export default function SignInForm() {
         </Container>
       </div>
     </div>
-
-
   );
 }

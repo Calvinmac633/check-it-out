@@ -11,10 +11,9 @@ import Carousel from "./components/Carousel";
 import Footer from "./components/Footer";
 import { ListPage } from "./pages/ListPage"
 import { Home } from "./pages/Home"
-import { Signup } from "./pages/Signup"
-import { Signin } from "./pages/Signin"
+// import { Signup } from "./pages/Signup"
+import { Lookup } from "./pages/Lookup"
 import 'font-awesome/css/font-awesome.min.css';
-import Lookup from "./components/Lookup";
 import { StoreProvider } from "./utils/GlobalState";
 
 
@@ -25,12 +24,6 @@ function App() {
       <Router>
         <StoreProvider>
           <Switch>
-            <Route path='/signup'>
-              <Signup />
-            </Route>
-            <Route path='/signin'>
-              <Signin />
-            </Route>
             <Route path='/List/:codename'>
               <ListPage />
             </Route>

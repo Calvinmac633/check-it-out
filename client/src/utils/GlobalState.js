@@ -38,17 +38,6 @@ const reducer = (state, action) => {
                 loading: false
             };
 
-        // case REMOVE_LIST_ITEM:
-        //     return {
-        //         ...state.currentList.items,
-        //         currentList: state.currentList.items.filter((item) => {
-        //             console.log("This is item id", item._id)
-        //             console.log("This is action id", action._id)
-        //             console.log(item._id === action._id)
-        //             return item._id !== action._id; //This is returning a different state, no longer an object, but an array of objects
-        //         },
-        //         ),
-        //     };
 
         case REMOVE_LIST_ITEM:
             return {

@@ -4,6 +4,7 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
+import "./style.css"
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -17,15 +18,15 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     textAlign: "center",
     fontSize: '65px',
-    fontFamily:'Londrina Shadow',
-    float:"Right",
+    fontFamily: 'Londrina Shadow',
+    float: "Right",
   },
   appBar: {
-   height: "75px",
-   backgroundColor: "#f3c623",
-  
+    height: "75px",
+    backgroundColor: "#f3c623",
+
   }
- 
+
 }));
 
 export default function ButtonAppBar(props) {
@@ -34,15 +35,15 @@ export default function ButtonAppBar(props) {
     <div className={classes.root}>
       <AppBar className={classes.appBar} position="static">
         <Toolbar>
-          <Typography variant="h6" className={classes.title }>
-            <a style={{ color: 'white'}} href="/">Check it Out</a>
+          <Typography id="checkitout" variant="h6" className={classes.title}>
+            <a style={{ color: 'white' }} href="/">Check it Out</a>
           </Typography>
           {props.children}
-  <Button color="inherit"><a style={{ color: '#18b0b0', fontSize: '30px', fontFamily:"londrina Shadow"}} href={props.link1}>{props.text1}</a></Button>
-  <Button color="inherit"><a style={{ color: 'white', fontSize: '30px',fontFamily:"londrina Shadow"}} href={props.link2}>{props.text2}</a></Button>
+          <Button color="inherit"><a style={{ color: '#18b0b0', fontSize: '30px', fontFamily: "londrina Shadow" }} href={props.link1}>{props.text1}</a></Button>
+          <Button color="inherit"><a style={{ color: 'white', fontSize: '30px', fontFamily: "londrina Shadow" }} href={props.link2}>{props.text2}</a></Button>
         </Toolbar>
       </AppBar>
     </div>
-   
+
   );
 }
