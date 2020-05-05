@@ -11,6 +11,7 @@ import Container from '@material-ui/core/Container';
 import AssignmentIcon from '@material-ui/icons/Assignment';
 import AppBar from "../AppBar";
 import "./style.css"
+import API from '../../utils/API';
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -42,12 +43,15 @@ const useStyles = makeStyles((theme) => ({
   },
   display: {
     display: "flex",
-    marginBottom:"200px",
+    marginBottom: "200px",
   }
 }));
 
 export default function SignInForm() {
   const classes = useStyles();
+
+  // the below is temporary code to demonstrate that the endpoint is working
+  API.createList('mackerel').then(res => console.log(res.data));
 
   return (
     <div>
@@ -71,22 +75,20 @@ export default function SignInForm() {
                 fullWidth
                 id="listname"
                 label="Enter List Name"
-                name="email"
-                autoComplete="email"
-                autoFocus
+                name="List Name"
+                autoFocus              
+                
               />
 
-              <Link href="/List">
-                <Button
-                  // type="submit"
-                  fullWidth
-                  variant="contained"
-                  color=""
-                  className={classes.submit}
-                >
-                  Let's Create
+              <Button
+                // type="submit"
+                fullWidth
+                variant="contained"
+                color=""
+                className={classes.submit}
+              >
+                Let's Create
           </Button>
-              </Link>
 
               <Grid container>
                 <Grid item xs>
@@ -116,8 +118,7 @@ export default function SignInForm() {
                 fullWidth
                 id="codename"
                 label="Enter Code Name"
-                name="email"
-                autoComplete="email"
+                name="Code Name"
                 autoFocus
               />
 

@@ -3,15 +3,14 @@ import { REMOVE_LIST_ITEM, UPDATE_LISTS, LOADING, SET_CURRENT_LIST, ADD_LIST } f
 import React, { useState, useEffect, useRef } from "react";
 import { Link, useParams } from "react-router-dom";
 import { Form, Button, Table } from 'react-bootstrap';
-import API from "../utils/API"
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCheck } from '@fortawesome/free-solid-svg-icons'
+import API from "../utils/API";
+import Modal from "../components/Modal";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCheck } from '@fortawesome/free-solid-svg-icons';
 import AppBar from "../components/AppBar"
-
 import CreateListForm from "../components/CreateListForm"
 // import codename from ZOEYTHING
 // import Modal from "../components/Modal";
-
 export function ListPage() {
     const { codename } = useParams();
     const { id } = useParams();
@@ -47,32 +46,25 @@ export function ListPage() {
             })
             .catch(err => console.log(err));
     }
-
-
     // const {codename} = useParams()
     useEffect(() => {
         getList(codename);
     }, [])
 
-
-
-
-
     var count = 1
-
     // const listResult = list.find( ({ listname }) => listname === "Target List");
 
     return (
 
         state.currentList.codename !== 0 ? (<div>
-            <AppBar link1="/signup" text1="Sign up" link2="/signin" text2="Sign in" />
+            <AppBar link1="/" text1="Gotta Blast">
+      <Modal/>
+      </AppBar>
             <main role="main">
-
                 <section class="jumbotron text-left">
                     <div class="container">
                         <CreateListForm />
                         <div>
-
                         </div>
                         {console.log("This is state -->",state)}
                         <Table striped bordered hover>
@@ -143,6 +135,7 @@ export function ListPage() {
                 </section>
             </main>
         </div>) : <p>-----STATE AINT WERKIN------</p>
+
 
 
     );
