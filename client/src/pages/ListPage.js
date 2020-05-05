@@ -3,9 +3,10 @@ import { REMOVE_LIST, UPDATE_LISTS, LOADING, SET_CURRENT_LIST, ADD_LIST } from "
 import React, { useState, useEffect, useRef } from "react";
 import { Link, useParams } from "react-router-dom";
 import { Form, Button, Table } from 'react-bootstrap';
-import API from "../utils/API"
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCheck } from '@fortawesome/free-solid-svg-icons'
+import API from "../utils/API";
+import Modal from "../components/Modal";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCheck } from '@fortawesome/free-solid-svg-icons';
 import AppBar from "../components/AppBar"
 
 import CreateListForm from "../components/CreateListForm"
@@ -15,15 +16,14 @@ import CreateListForm from "../components/CreateListForm"
 export function ListPage() {
 const {codename} = useParams();
 
-    // const [formObject, setFormObject] = useState([]);
+// const [formObject, setFormObject] = useState([]);
 
-    const [state, dispatch] = useStoreContext();
+const [state, dispatch] = useStoreContext();
 
-
-    const getList = (codename) => {
-       dispatch({ type: LOADING });
-       API.getList(codename)
-       .then(results => {
+const getList = (codename) => {
+    dispatch({ type: LOADING });
+    API.getList(codename)
+    .then(results => {
            dispatch({
                type: SET_CURRENT_LIST,
                list: results.data
@@ -39,19 +39,15 @@ const {codename} = useParams();
     }, [])
 
     
-
-        
-
     var count = 1
 
     // const listResult = list.find( ({ listname }) => listname === "Target List");
 
-    return (
-
-        state.currentList.codename !==0 ? (<div>
-            <AppBar link1="/signup" text1="Sign up" link2="/signin" text2="Sign in" />
-            <main role="main">
-
+    return state.currentList.codename !==0 ? (<div>
+ <AppBar link1="/" text1="Gotta Blast">
+      <Modal/>
+      </AppBar>            
+      <main role="main">
                 <section class="jumbotron text-left">
                     <div class="container">
                         <CreateListForm />
@@ -87,7 +83,5 @@ const {codename} = useParams();
             </main>
         </div>) : <p>-----STATE AINT WERKIN------</p>
         
-
-    );
 
 }

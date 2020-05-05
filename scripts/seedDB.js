@@ -12,7 +12,7 @@ mongoose.connect(
 const seeds = [
 
   {
-    codename: "Turtle-Apple",
+    codename: "turtle-apple",
     listname: "Food List",
     items: [{
       itemName: "Cereal",
@@ -26,7 +26,7 @@ const seeds = [
     }]
   },
   {
-    codename: "Cat-Banana",
+    codename: "cat-banana",
     listname: "Grocery List",
     items: [{
       itemName: "Yogurt",

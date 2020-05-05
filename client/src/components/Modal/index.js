@@ -3,6 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
 import PersonAddIcon from '@material-ui/icons/PersonAdd';
 import TextField from '@material-ui/core/TextField';
+import ModalForm from "../ModalForm";
 
 function rand() {
   return Math.round(Math.random() * 20) - 10;
@@ -60,14 +61,27 @@ export default function SimpleModal() {
       <p id="simple-modal-description"style={{ color:"#856c8b",fontSize: '20px', fontFamily: "londrina Shadow"}}>
         Enter email address of the person you want to share this list with
       </p>
-
-      <TextField id="outlined-basic" label="email address" variant="outlined" className={classes.text} />
+<ModalForm/>
+      {/* <TextField id="outlined-basic" label="email address" variant="outlined" className={classes.text} /> */}
      
   
-      <button type="button" onClick={handleClose}style={{ color:"black",fontSize: '30px', fontFamily: "londrina Shadow"}}>
+{/* <form id="contact-form" onSubmit={this.handleSubmit.bind(this)} method="POST">
+    <div className="form-group">
+        <label for="name">Name</label>
+        <input type="text" className="form-control" id="name" />
+    </div>
+    <div className="form-group">
+        <label for="exampleInputEmail1">Email address</label>
+        <input type="email" className="form-control" id="email" aria-describedby="emailHelp" />
+    </div>
+    <div className="form-group">
+        <label for="message">Message</label>
+        <textarea className="form-control" rows="5" id="message"></textarea>
+    </div>
+    <button type="submit" className="btn btn-primary" onClick={handleClose}style={{ color:"black",fontSize: '30px', fontFamily: "londrina Shadow"}}>
         Add Person
-
       </button>
+      </form> */}
     </div>
   );
 
