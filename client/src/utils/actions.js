@@ -1,5 +1,5 @@
 export const UPDATE_LISTS = "UPDATE_LISTS";
-export const REMOVE_LIST = "REMOVE_LIST";
+export const REMOVE_LIST_ITEM = "REMOVE_LIST";
 export const SET_CURRENT_LIST = "SET_CURRENT_LIST";
 export const ADD_LIST = "ADD_LIST";
 export const LOADING = "LOADING";

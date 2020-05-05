@@ -1,7 +1,7 @@
 import React, { createContext, useReducer, useContext } from "react";
 import {
     SET_CURRENT_LIST,
-    REMOVE_LIST,
+    REMOVE_LIST_ITEM,
     UPDATE_LISTS,
     ADD_LIST,
     ADD_FAVORITE,
@@ -38,12 +38,24 @@ const reducer = (state, action) => {
                 loading: false
             };
 
-        case REMOVE_LIST:
+        // case REMOVE_LIST_ITEM:
+        //     return {
+        //         ...state.currentList.items,
+        //         currentList: state.currentList.items.filter((item) => {
+        //             console.log("This is item id", item._id)
+        //             console.log("This is action id", action._id)
+        //             console.log(item._id === action._id)
+        //             return item._id !== action._id; //This is returning a different state, no longer an object, but an array of objects
+        //         },
+        //         ),
+        //     };
+
+        case REMOVE_LIST_ITEM:
             return {
                 ...state,
-                lists: state.lists.filter((list) => {
-                    return list._id !== action._id;
-                })
+                currentList: {
+                    items: state.currentList.items.filter(item => action._id !== item._id) //updated this to have brackets around items
+                },
             };
 
         case LOADING:
@@ -59,29 +71,30 @@ const reducer = (state, action) => {
 
 const StoreProvider = ({ value = [], ...props }) => {
     const [state, dispatch] = useReducer(reducer, {
-    //   lists: [], // might not need this?
-      currentList: {
-        _id: 0,
-        codename: "",
-        listname: "",
-        items: [
-            {
-                // id: 0, --> ideally want to add this in
-                itemName: "",
-                quantity: 0,
-                purchased: false
-            }
-        ]
-      },
-    //   favorites: [],
-      loading: false
+        //   lists: [], // might not need this?
+        currentList: {
+            _id: 0,
+            codename: "",
+            listname: "",
+            items: [
+                {
+                    // id: 0, --> ideally want to add this in
+                    _id: 0,
+                    itemName: "",
+                    quantity: 0,
+                    purchased: false
+                }
+            ]
+        },
+        //   favorites: [],
+        loading: false
     });
-  
+
     return <Provider value={[state, dispatch]} {...props} />;
-  };
-  
-  const useStoreContext = () => {
+};
+
+const useStoreContext = () => {
     return useContext(StoreContext);
-  };
-  
-  export { StoreProvider, useStoreContext };
+};
+
+export { StoreProvider, useStoreContext };
