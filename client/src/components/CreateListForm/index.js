@@ -41,8 +41,8 @@ function CreateListForm() {
       })
       .catch(err => console.log(err));
 
-    // nameRef.current.value = "";
-    // quantityRef.current.value = "";
+    nameRef.current.value = "";
+    quantityRef.current.value = "";
   };
 
   return (
