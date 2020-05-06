@@ -33,7 +33,8 @@ module.exports = {
       {
         $push: {
           items: 
-            { itemName: req.body.itemName }
+            { itemName: req.body.itemName,
+            quantity: req.body.quantity }
         }
       }, 
       {new: true}

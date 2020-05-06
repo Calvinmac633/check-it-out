@@ -9,7 +9,7 @@ const listSchema = new Schema({
         {
             _id: { type: Schema.ObjectId, auto: true }, // --> THIS IS NOT WORKING
             itemName: String,
-            quantity: Number,
+            quantity: String,
             purchased: Boolean
         }
     ]
