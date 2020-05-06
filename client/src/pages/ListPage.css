@@ -1,0 +1,22 @@
+tr{
+    color: #18b0b0;
+    border: 5px solid #f3c623;
+    font-family:londrina Shadow;
+    font-Size: 30px;
+    background-color: white;
+   
+}
+td{
+    color: #18b0b0;
+    font-family:londrina Shadow;
+    font-Size: 30px;
+    background-color: white;
+    
+}
+.table-bordered td{
+    border: 3px solid #f3c623;
+}
+.table-bordered thead td, .table-bordered thead th{
+    border: 3px solid #f3c623;
+    
+}

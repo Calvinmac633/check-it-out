@@ -1,3 +1,4 @@
+import "./ListPage.css"
 import { useStoreContext } from "../utils/GlobalState";
 import { REMOVE_LIST_ITEM, UPDATE_LISTS, LOADING, SET_CURRENT_LIST, ADD_LIST } from "../utils/actions"
 import React, { useState, useEffect, useRef } from "react";
@@ -9,6 +10,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
 import AppBar from "../components/AppBar"
 import CreateListForm from "../components/CreateListForm"
+
 // import codename from ZOEYTHING
 // import Modal from "../components/Modal";
 export function ListPage() {
@@ -58,15 +60,15 @@ export function ListPage() {
 
         state.currentList.codename !== 0 ? (<div>
             <AppBar link1="/" text1="Gotta Blast">
-      <Modal/>
-      </AppBar>
+                <Modal />
+            </AppBar>
             <main role="main">
                 <section class="jumbotron text-left">
                     <div class="container">
                         <CreateListForm />
                         <div>
                         </div>
-                        {console.log("This is state -->",state)}
+                        {console.log("This is state -->", state)}
                         <Table striped bordered hover>
                             <thead>
                                 <tr>

@@ -1,3 +1,4 @@
+import "./CreateListForm.css"
 import { useStoreContext } from "../../utils/GlobalState";
 import { REMOVE_LIST, UPDATE_LISTS, LOADING, SET_CURRENT_LIST, ADD_LIST } from "../../utils/actions"
 import React, { useState, useEffect, useRef } from "react";
@@ -7,6 +8,7 @@ import API from "../../utils/API"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheck } from '@fortawesome/free-solid-svg-icons'
 import AppBar from "../AppBar"
+import "./CreateListForm.css"
 // import codename from ZOEYTHING
 // const codename = "Turtle-Apple";
 
@@ -48,6 +50,14 @@ function CreateListForm() {
           Enter the item name.
           </Form.Text>
       </Form.Group>
+      <Form.Group controlId="formQuantity">
+             
+              <Form.Control type="text" placeholder="Enter Quantity" />
+              <Form.Text className="text-muted">
+                Enter the item quantity
+              </Form.Text>
+            </Form.Group>
+      
       <Button onClick={handleSubmit} variant="primary" type="button">Add to list</Button>
     </Form>
   )
