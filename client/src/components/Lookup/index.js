@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from "react";
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -12,6 +12,13 @@ import AssignmentIcon from '@material-ui/icons/Assignment';
 import AppBar from "../AppBar";
 import "./style.css"
 import API from '../../utils/API';
+import { REMOVE_LIST, UPDATE_LISTS, LOADING, SET_CURRENT_LIST, ADD_LIST } from "../../utils/actions"
+import { useStoreContext } from "../../utils/GlobalState";
+import { useParams } from "react-router-dom";
+import { Form } from "react-bootstrap";
+
+
+
 
 
 const useStyles = makeStyles((theme) => ({
@@ -50,9 +57,33 @@ const useStyles = makeStyles((theme) => ({
 
 export default function SignInForm() {
   const classes = useStyles();
+  const listNameRef = useRef();
+  const {listname} = useParams();
+  const [state, dispatch] = useStoreContext();
+
+  const handleSubmit = e => {
+    e.preventDefault();
+    dispatch({ type: LOADING });
+    console.log("current listname",listNameRef.current.value)
+    API.createList(listNameRef.current.value
+    ).then(res => console.log(
+      "THIS IS CREATELIST RES.DATA", res.data));
+    }
+  
+  //     .then(result => {
+  //       console.log("THIS IS THE API CLICK RESULT", result)
+  //       dispatch({
+  //         type: UPDATE_LISTS,
+  //         list: result.data
+  //       });
+  //     })
+  //     .catch(err => console.log(err));
+
+  //   nameRef.current.value = "";
+  //   //   bodyRef.current.value = "";
+  // };
 
   // the below is temporary code to demonstrate that the endpoint is working
-  API.createList('mackerel').then(res => console.log(res.data));
 
   return (
     <div>
@@ -68,8 +99,11 @@ export default function SignInForm() {
             <Typography component="h1" variant="h5" style={{ fontSize: '50px', fontFamily: "londrina Shadow" }}>
               Create a New List
         </Typography>
-            <form className={classes.form} noValidate>
-              <TextField multiline InputProps={{ style: { fontFamily:"londrina Shadow", fontSize: '30px', backgroundcolor:"#856c8b"} }}
+            <Form className={classes.form} noValidate >
+              <Form.Group>
+              <Form.Control
+              ref={listNameRef}
+    
                 variant="outlined"
                 margin="normal"
                 required
@@ -77,12 +111,12 @@ export default function SignInForm() {
                 id="listname"
                 label="Enter List Name"
                 name="List Name"
-                autoFocus              
-                
+                type="text"
+                autoFocus 
               />
-
+              </Form.Group>     
               <Button
-                // type="submit"
+               onClick={handleSubmit} 
                 fullWidth
                 variant="contained"
                 color=""
@@ -99,7 +133,7 @@ export default function SignInForm() {
 
                 </Grid>
               </Grid>
-            </form>
+            </Form>
           </div>
         </Container>
         <Container component="main" maxWidth="xs">
