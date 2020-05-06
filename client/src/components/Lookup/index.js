@@ -18,10 +18,6 @@ import { useStoreContext } from "../../utils/GlobalState";
 import { Link, useParams } from "react-router-dom";
 import { Form, Button } from "react-bootstrap";
 
-
-
-
-
 const useStyles = makeStyles((theme) => ({
   paper: {
     marginTop: theme.spacing(8),
@@ -59,6 +55,7 @@ const useStyles = makeStyles((theme) => ({
 export default function SignInForm() {
   const classes = useStyles();
   const listNameRef = useRef();
+  const codeNameRef = useRef();
   const { listname } = useParams();
   const [state, dispatch] = useStoreContext();
 
@@ -67,6 +64,16 @@ export default function SignInForm() {
     dispatch({ type: LOADING });
     console.log("current listname", listNameRef.current.value)
     API.createList(listNameRef.current.value
+    )
+      .then(res =>
+        window.location.href = "list/" + res.data.codename)
+  }
+
+  const handleSubmitCodename = e => {
+    e.preventDefault();
+    dispatch({ type: LOADING });
+    // console.log("codename", codeNameRef.current.value)
+    API.getList(codeNameRef.current.value
     )
       .then(res =>
         window.location.href = "list/" + res.data.codename)
@@ -115,14 +122,7 @@ export default function SignInForm() {
           </Button>
               </Link>
 
-              <Grid container>
-                <Grid item xs>
-
-                </Grid>
-                <Grid item>
-
-                </Grid>
-              </Grid>
+  
             </Form>
           </div>
         </Container>
@@ -135,8 +135,11 @@ export default function SignInForm() {
             <Typography component="h1" variant="h5" style={{ fontSize: '50px', fontFamily: "londrina Shadow" }}>
               Search Existing List
         </Typography>
-            <form className={classes.form} noValidate>
-              <TextField multiline InputProps={{ style: { fontFamily:"londrina Shadow", fontSize: '30px', backgroundcolor:"#856c8b"} }}
+            <Form className={classes.form} noValidate>
+            <Form.Group>
+                <Form.Control
+                 multiline InputProps={{ style: { fontFamily:"londrina Shadow", fontSize: '30px', backgroundcolor:"#856c8b"} }}
+                ref={codeNameRef}
                 variant="outlined"
                 margin="normal"
                 required
@@ -146,27 +149,21 @@ export default function SignInForm() {
                 name="Code Name"
                 autoFocus
               />
-
-
+                </Form.Group>
               <Link href="/List">
                 <Button
-                  // type="submit"
+                onClick={handleSubmitCodename}
+                  type="submit"
                   fullWidth
                   variant="contained"
                   color=""
                   className={classes.submit}
                 >
                   Let's Search
-          </Button>
+                </Button>
               </Link>
-
-              <Grid container>
-                <Grid item xs>
-                </Grid>
-                <Grid item>
-                </Grid>
-              </Grid>
-            </form>
+           
+            </Form>
           </div>
         </Container>
       </div>
