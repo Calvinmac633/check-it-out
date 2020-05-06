@@ -56,6 +56,8 @@ const useStyles = makeStyles((theme) => ({
 
 export default function SignInForm() {
   const classes = useStyles();
+  const [myListName, setMyListName] = useState({})
+
   const listNameRef = useRef();
   const {listname} = useParams();
   const [state, dispatch] = useStoreContext();
@@ -65,8 +67,7 @@ export default function SignInForm() {
     dispatch({ type: LOADING });
     console.log("current listname",listNameRef.current.value)
     API.createList(listNameRef.current.value
-    ).then(res => console.log(
-      "THIS IS CREATELIST RES.DATA", res.data));
+    ).then(res => res.data, console.log('this is', this));
     }
   
   //     .then(result => {
@@ -114,23 +115,16 @@ export default function SignInForm() {
               />
               </Form.Group>     
               <Button
+              href="#"
                onClick={handleSubmit} 
                 fullWidth
                 variant="contained"
                 color=""
+                type="button"
                 className={classes.submit}
               >
                 Let's Create
           </Button>
-
-              <Grid container>
-                <Grid item xs>
-
-                </Grid>
-                <Grid item>
-
-                </Grid>
-              </Grid>
             </Form>
           </div>
         </Container>
