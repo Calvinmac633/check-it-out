@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
 import Avatar from '@material-ui/core/Avatar';
-import Button from '@material-ui/core/Button';
+// import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
-import Link from '@material-ui/core/Link';
+// import Link from '@material-ui/core/Link';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
@@ -14,8 +14,9 @@ import "./style.css"
 import API from '../../utils/API';
 import { REMOVE_LIST, UPDATE_LISTS, LOADING, SET_CURRENT_LIST, ADD_LIST } from "../../utils/actions"
 import { useStoreContext } from "../../utils/GlobalState";
-import { useParams } from "react-router-dom";
-import { Form } from "react-bootstrap";
+// import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import { Form, Button } from "react-bootstrap";
 
 
 
@@ -57,32 +58,18 @@ const useStyles = makeStyles((theme) => ({
 export default function SignInForm() {
   const classes = useStyles();
   const listNameRef = useRef();
-  const {listname} = useParams();
+  const { listname } = useParams();
   const [state, dispatch] = useStoreContext();
 
   const handleSubmit = e => {
     e.preventDefault();
     dispatch({ type: LOADING });
-    console.log("current listname",listNameRef.current.value)
+    console.log("current listname", listNameRef.current.value)
     API.createList(listNameRef.current.value
-    ).then(res => console.log(
-      "THIS IS CREATELIST RES.DATA", res.data));
-    }
-  
-  //     .then(result => {
-  //       console.log("THIS IS THE API CLICK RESULT", result)
-  //       dispatch({
-  //         type: UPDATE_LISTS,
-  //         list: result.data
-  //       });
-  //     })
-  //     .catch(err => console.log(err));
-
-  //   nameRef.current.value = "";
-  //   //   bodyRef.current.value = "";
-  // };
-
-  // the below is temporary code to demonstrate that the endpoint is working
+    )
+      .then(res =>
+        window.location.href = "list/" + res.data.codename)
+  }
 
   return (
     <div>
@@ -100,28 +87,32 @@ export default function SignInForm() {
         </Typography>
             <Form className={classes.form} noValidate >
               <Form.Group>
-              <Form.Control
-              ref={listNameRef}
-                variant="outlined"
-                margin="normal"
-                required
-                fullWidth
-                id="listname"
-                label="Enter List Name"
-                name="List Name"
-                type="text"
-                autoFocus 
-              />
-              </Form.Group>     
-              <Button
-               onClick={handleSubmit} 
-                fullWidth
-                variant="contained"
-                color=""
-                className={classes.submit}
-              >
-                Let's Create
+                <Form.Control
+                  ref={listNameRef}
+                  variant="outlined"
+                  margin="normal"
+                  // required
+                  fullWidth
+                  id="listname"
+                  label="Enter List Name"
+                  name="List Name"
+                  type="text"
+                  autoFocus
+                />
+              </Form.Group>
+              <Link to={"/List"}>
+                <Button
+                  onClick={handleSubmit}
+                  fullWidth
+                  variant="contained"
+                  color=""
+                  className={classes.submit}
+                  type="submit"
+                  // href="/List"
+                >
+                  Let's Create
           </Button>
+              </Link>
 
               <Grid container>
                 <Grid item xs>
