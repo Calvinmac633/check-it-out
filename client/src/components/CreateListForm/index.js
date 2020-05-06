@@ -13,8 +13,11 @@ import "./CreateListForm.css"
 // const codename = "Turtle-Apple";
 
 function CreateListForm() {
-  const {codename} = useParams();
+  const { codename } = useParams();
   const nameRef = useRef();
+  const quantityRef = useRef();
+
+  // const { nameRef, quantityRef} = useRef();
   // const bodyRef = useRef();
   // const authorRef = useRef();
   const [state, dispatch] = useStoreContext();
@@ -23,23 +26,23 @@ function CreateListForm() {
     e.preventDefault();
     dispatch({ type: LOADING });
     console.log(nameRef.current.value)
+    console.log(quantityRef.current.value)
     API.addItem(codename, {
-
       itemName: nameRef.current.value,
-      // body: bodyRef.current.value,
-      // author: authorRef.current.value
+      quantity: quantityRef.current.value,
     })
       .then(result => {
         console.log("THIS IS THE API CLICK RESULT", result)
         dispatch({
           type: UPDATE_LISTS,
+          // quantity: result.data,
           list: result.data
         });
       })
       .catch(err => console.log(err));
 
-    nameRef.current.value = "";
-    //   bodyRef.current.value = "";
+    // nameRef.current.value = "";
+    // quantityRef.current.value = "";
   };
 
   return (
@@ -51,13 +54,13 @@ function CreateListForm() {
           </Form.Text>
       </Form.Group>
       <Form.Group controlId="formQuantity">
-             
-              <Form.Control type="text" placeholder="Enter Quantity" />
-              <Form.Text className="text-muted">
-                Enter the item quantity
+
+        <Form.Control ref={quantityRef} type="text" placeholder="Enter Quantity" />
+        <Form.Text className="text-muted">
+          Enter the item quantity
               </Form.Text>
-            </Form.Group>
-      
+      </Form.Group>
+
       <Button onClick={handleSubmit} variant="primary" type="button">Add to list</Button>
     </Form>
   )
