@@ -61,14 +61,16 @@ export default function SimpleModal() {
         Enter email address of the person you want to share this list with
       </p>
 
-      <TextField id="outlined-basic" label="email address" variant="outlined" className={classes.text} />
+      <TextField multiline InputProps={{ style: { marginBottom: "20px", fontFamily:"londrina Shadow", fontSize: '30px', backgroundcolor:"#856c8b"} }}id="outlined-basic" label="email address" variant="outlined" className={classes.text} />
      
   
       <button type="button" onClick={handleClose} block style={{
                                 width: 180, margin: 'auto', color: '#856c8b', fontSize: '30px', fontFamily: "londrina Shadow", backgroundColor: "#dee3e2", borderBottomLeftRadius: "5px",
                                 borderBottomRightRadius: "5px",
                                 borderTopLeftRadius: "5px",
-                                borderTopRightRadius: "5px", border: "5px solid #856c8b"
+                                borderTopRightRadius: "5px", border: "5px solid #856c8b",
+                                display:"flex",
+                                justifyContent:"center",alignItems:"center", 
                             }}>
         Add Person
 
