@@ -1,0 +1,25 @@
+.btn-primary{
+    width: 200;
+    margin: auto;
+    color: #856c8b; 
+    font-size:40px;
+    font-Family: londrina Shadow;
+    background-color: #dee3e2; 
+    border: 3px solid #856c8b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-Bottom: 30px;
+   
+}
+.form-control{
+    width:200;
+    margin: auto;
+    font-Family: londrina Shadow;
+    font-size:30px;
+    border: 3px solid #856c8b;
+}
+.form-text{
+    font-Family: londrina Shadow;
+    font-size:20px;
+}
