@@ -63,7 +63,7 @@ export function ListPage() {
             <AppBar link1="/" text1="Gotta Blast">
                 <Modal />
             </AppBar>
-        <h2>{"Your codename is: " + state.currentList.codename}</h2>
+        <h2>{"Your codename is: " + codename}</h2>
             <main role="main">
                 <section class="jumbotron text-left">
                     <div class="container">
