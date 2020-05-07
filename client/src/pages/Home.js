@@ -15,7 +15,7 @@ export function Home() {
         <div>
 
             <Gif />
-           <p> Make shopping for family and friends easier! Create new, or join existing shopping lists that can be viewed and updated by other members who are given access. </p>
+           {/* <p> Make shopping for family and friends easier! Create new, or join existing shopping lists that can be viewed and updated by other members who are given access. </p> */}
 <Footer/>
         </div>
     );
