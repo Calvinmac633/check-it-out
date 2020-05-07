@@ -74,7 +74,7 @@ export function ListPage() {
                         <div>
                         </div>
                         {console.log("This is state -->", state)}
-                        <Table striped bordered hover>
+                        <Table bordered responsive size="sm">
                             <thead>
                                 <tr>
                                     <th>#</th>

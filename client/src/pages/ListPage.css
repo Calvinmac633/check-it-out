@@ -1,9 +1,9 @@
 tr{
-    color: #3f8cb5;
-    border: 5px solid #f3c623;
+    color: white;
+    border: 2px solid #f3c623;
     font-family:londrina Shadow;
     font-Size: 35px;
-    background-color: white;
+    background-color:#3f8cb5;
     text-align: center;
     padding: 0%;
    
@@ -13,13 +13,15 @@ td{
     font-family: Roboto;
     font-Size: 21px;
     background-color: white;
+    border: 2px solid #f3c623;
+    padding: 0px;
     
 }
 .table-bordered td{
-    border: 3px solid #f3c623;
+    border: 2px solid #f3c623;
 }
 .table-bordered thead td, .table-bordered thead th{
-    border: 3px solid #f3c623;
+    border: 2px solid #f3c623;
     
 }
 h1{
