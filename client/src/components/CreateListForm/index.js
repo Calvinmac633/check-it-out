@@ -8,7 +8,6 @@ import API from "../../utils/API"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheck } from '@fortawesome/free-solid-svg-icons'
 import AppBar from "../AppBar"
-import "./CreateListForm.css"
 // import codename from ZOEYTHING
 // const codename = "Turtle-Apple";
 
