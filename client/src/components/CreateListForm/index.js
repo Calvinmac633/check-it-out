@@ -6,8 +6,9 @@ import API from "../../utils/API"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheck } from '@fortawesome/free-solid-svg-icons'
 import AppBar from "../AppBar"
-import "./CreateListForm.css"
+reateListForm.css"
 import { Form, Button, Table, ThemeProvider } from 'react-bootstrap';
+
 // import codename from ZOEYTHING
 // const codename = "Turtle-Apple";
 
@@ -61,6 +62,13 @@ function CreateListForm() {
     align-items: center;
     margin-Bottom: 30px;
     }
+    .form-control{
+      width:200;
+      margin: auto;
+      font-Family: londrina Shadow;
+      font-size:30px;
+      border: 3px solid #856c8b;
+  }
 
     .form-control{
       width:200;
@@ -89,9 +97,9 @@ function CreateListForm() {
      
       </Form.Group>
       <Form.Group controlId="formQuantity">
-
       <ThemeProvider prefixes={{ form: 'form-control' }}>
       <Form.Text className="text-muted">
+
           Enter the item quantity
               </Form.Text>
         <Form.Control ref={quantityRef} type="text" placeholder="Enter Quantity" />
