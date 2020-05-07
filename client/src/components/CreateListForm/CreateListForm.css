@@ -1,11 +1,11 @@
 .btn-primary{
     width: 200;
     margin: auto;
-    color: #856c8b; 
+    color: #683fb5; 
     font-size:40px;
     font-Family: londrina Shadow;
     background-color: #dee3e2; 
-    border: 3px solid #856c8b;
+    border: 3px solid #683fb5;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -15,14 +15,14 @@
 .form-control{
     width:200;
     margin: auto;
-    font-Family: londrina Shadow;
-    font-size:30px;
-    border: 3px solid #856c8b;
+    font-Family: Open Sans;
+    font-size:50px;
+    border: 3px solid #683fb5;
 }
 .form-text{
     font-Family: londrina Shadow;
     font-size:20px;
+    color: #000000
 }
-.jumbotron {
-    background-color:#a8d3da;
-}
+
+

@@ -1,30 +1,45 @@
 tr{
-    color: #18b0b0;
-    border: 5px solid #f3c623;
+    color: white;
+    border: 2px solid #f3c623;
     font-family:londrina Shadow;
-    font-Size: 30px;
-    background-color: white;
+    font-Size: 35px;
+    background-color:#3f8cb5;
+    text-align: center;
+    padding: 0%;
    
 }
 td{
-    color: #18b0b0;
-    font-family:londrina Shadow;
-    font-Size: 30px;
+    color: #3f8cb5;
+    font-family: Roboto;
+    font-Size: 21px;
     background-color: white;
+    border: 2px solid #f3c623;
+    padding: 0px;
     
 }
 .table-bordered td{
-    border: 3px solid #f3c623;
+    border: 2px solid #f3c623;
 }
 .table-bordered thead td, .table-bordered thead th{
-    border: 3px solid #f3c623;
+    border: 2px solid #f3c623;
     
 }
-h2{
-    color:#0f4c81;
-    background-color:#a8d3da;
+
+h1{
     font-family:londrina Shadow;
+    font-Size: 30px;
+    justify-content: center;
+    align-items: center;
+    margin-left: 2%;    
+
 }
-.jumbotron text-left{
-    background-color:#a8d3da;
+
+h2{
+    color: #683fb5;
+    font-family: Roboto;
+    font-Size: 25px;
+    justify-content: center;
+    align-items: center;
+    margin-left: 2%;    
+
 }

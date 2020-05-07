@@ -15,9 +15,8 @@ import CreateListForm from "../components/CreateListForm"
 // import Modal from "../components/Modal";
 export function ListPage() {
     const { codename } = useParams();
-    const { listname } = useParams();
     const { id } = useParams();
-
+ 
     // const [formObject, setFormObject] = useState([]);
 
     const [state, dispatch] = useStoreContext();
@@ -50,34 +49,37 @@ export function ListPage() {
             })
             .catch(err => console.log(err));
     }
+
     // const {codename} = useParams()
     useEffect(() => {
         getList(codename);
     }, [])
 
     var count = 1
-    // const listResult = list.find( ({ listname }) => listname === "Target List");
+
 
     return (
-
         state.currentList.codename !== 0 ? (<div>
             <AppBar link1="/" text1="Gotta Blast">
                 <Modal />
             </AppBar>
-                                            
-        <h2>{"Your codename is: " + codename}</h2>
+            <h1>Your codename is:</h1>
+        <h2>{codename}</h2>
+        <br></br>
+        <br></br>
             <main role="main">
-                <section class="jumbotron text-left">
+                <section>
                     <div class="container">
                         <CreateListForm />
                         <div>
                         </div>
                         {console.log("This is state -->", state)}
-                        <Table striped bordered hover>
+                        <Table bordered responsive size="sm">
                             <thead>
                                 <tr>
                                     <th>#</th>
-                                    <th>Item</th>
+                                    <th>Item
+                                    </th>
                                     <th>Quantity</th>
                                     <th>Purchased?</th>
                                     {/* <th>ID</th> */}
@@ -145,5 +147,5 @@ export function ListPage() {
 
 
     );
+};
 
-}
