@@ -6,8 +6,9 @@ import API from "../../utils/API"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheck } from '@fortawesome/free-solid-svg-icons'
 import AppBar from "../AppBar"
-import "./CreateListForm.css"
+reateListForm.css"
 import { Form, Button, Table, ThemeProvider } from 'react-bootstrap';
+
 // import codename from ZOEYTHING
 // const codename = "Turtle-Apple";
 
