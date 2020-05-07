@@ -9,6 +9,17 @@ tr{
     padding-bottom: 0;
    
 }
+th{
+    color: white;
+    border: 2px solid #f3c623;
+    font-family:londrina Shadow;
+    font-Size: 35px;
+    background-color:#3f8cb5;
+    text-align: center;
+    padding: 0%;
+    padding-bottom: 0;
+   
+}
 
 td{
     color: #3f8cb5;
@@ -19,6 +30,12 @@ td{
     padding: 0px;
     
 }
+@media (max-width: 1200px ) {
+    th{
+        font-Size: 25px;
+        
+    }
+  }
 .table-bordered td{
     border: 2px solid #f3c623;
 }

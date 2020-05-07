@@ -3,6 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
 import PersonAddIcon from '@material-ui/icons/PersonAdd';
 import TextField from '@material-ui/core/TextField';
+import "./style.css"
 
 function rand() {
   return Math.round(Math.random() * 20) - 10;
@@ -80,7 +81,7 @@ export default function SimpleModal() {
 
   return (
     <div>
-      <button type="button" onClick={handleOpen}style={{ color:"white", backgroundColor:"#f3c623", fontSize: 40 }} >
+      <button type="button" onClick={handleOpen}style={{ color:"white", backgroundColor:"#f3c623", fontSize: 40, margin: "1rem" }} >
       <PersonAddIcon style={{ color:"white", backgroundColor:"#f3c623", fontSize: 40 }} /> 
       </button>
       <Modal
