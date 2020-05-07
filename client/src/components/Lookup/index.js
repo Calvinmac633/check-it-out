@@ -96,7 +96,7 @@ export default function SignInForm() {
             <Form className={classes.form} noValidate >
               <Form.Group>
                 <Form.Control
-                style={{ fontSize: '25px', fontFamily: 'Open Sans'}}
+                  style={{ fontSize: '25px', fontFamily: 'Open Sans' }}
                   ref={listNameRef}
                   variant="outlined"
                   margin="normal"
@@ -117,31 +117,36 @@ export default function SignInForm() {
                   color=""
                   className={classes.submit}
                   type="submit"
-                  style={{ 
+                  style={{
                     fontSize: '35px', fontFamily: "londrina Shadow",
-                      background: "#683fb5",
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      display: 'flex',
+                    background: "#683fb5",
+                    alignItems: 'center',
+                    display: 'flex',
+                    justifyContent: 'center',
                     color: "#FFFFFF",
-                    marginLeft: '16%',}}
+                    // marginLeft: '16%',
+                  }}
                 >
                   Let's Create
           </Button>
               </Link>
 
-              <div className="outer" style={{ width: '1px',
-  height: '100%',
-  margin: 'auto',
-  position: 'relative',
-  overflow: 'hidden'}}>
-  <div className="inner" style={{position: 'absolute',
-  width:'100%',
-  height: '40%',
-  background: '#683fb5',
-  top: '30%',
-  boxShadow: '0px 0px 30px 20px grey'}}></div>
-</div>
+              <div className="outer" style={{
+                width: '1px',
+                height: '100%',
+                margin: 'auto',
+                position: 'relative',
+                overflow: 'hidden'
+              }}>
+                <div className="inner" style={{
+                  position: 'absolute',
+                  width: '100%',
+                  height: '40%',
+                  background: '#683fb5',
+                  top: '30%',
+                  boxShadow: '0px 0px 30px 20px grey'
+                }}></div>
+              </div>
             </Form>
           </div>
         </Container>
@@ -155,40 +160,41 @@ export default function SignInForm() {
               Search Existing List
         </Typography>
             <Form className={classes.form} noValidate>
-            <Form.Group>
-                <Form.Control  style={{ fontSize: '25px', fontFamily: 'Open Sans'}}
-                ref={codeNameRef}
-                variant="outlined"
-                margin="normal"
-                required
-                fullWidth
-                id="codename"
-                label="Enter Code Name"
-                name="Code Name"
-                autoFocus
-              />
-                </Form.Group>
+              <Form.Group>
+                <Form.Control style={{ fontSize: '25px', fontFamily: 'Open Sans' }}
+                  ref={codeNameRef}
+                  variant="outlined"
+                  margin="normal"
+                  required
+                  fullWidth
+                  id="codename"
+                  label="Enter Code Name"
+                  name="Code Name"
+                  autoFocus
+                />
+              </Form.Group>
               <Link href="/List">
                 <Button
-                onClick={handleSubmitCodename}
+                  onClick={handleSubmitCodename}
                   type="submit"
                   fullWidth
                   variant="contained"
-                  style={{ 
+                  style={{
                     fontSize: '35px', fontFamily: "londrina Shadow",
-                      background: "#683fb5",
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      display: 'flex',
+                    background: "#683fb5",
+                    alignItems: 'center',
+                    display: 'flex',
+                    justifyContent: 'center',
                     color: "#FFFFFF",
-                    marginLeft: '16%',}}
+                    // marginLeft: '16%',
+                  }}
                   className={classes.submit}
                   required
                 >
                   Let's Search
                 </Button>
               </Link>
-           
+
             </Form>
           </div>
         </Container>

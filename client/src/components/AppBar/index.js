@@ -54,8 +54,10 @@ export default function ButtonAppBar(props) {
             <a className={classes.logo} style={{ color: 'white' }} href="/">Check it Out</a>
           </Typography>
           {props.children}
-          <Button color="inherit"><a style={{ color: '#18b0b0', fontSize: '30px', fontFamily: "londrina Shadow" }} href={props.link1}>{props.text1}</a></Button>
-          <Button color="inherit"><a style={{ color: 'white', fontSize: '30px', fontFamily: "londrina Shadow" }} href={props.link2}>{props.text2}</a></Button>
+          <Button className="NavButton" color="inherit"><a style={{ color: '#18b0b0', fontSize: '30px', fontFamily: "londrina Shadow" }} href={props.link1}>{props.text1}</a></Button>
+          
+          <Button className="NavButton" color="inherit"><a style={{ color: 'white', fontSize: '30px', fontFamily: "londrina Shadow" }} href={props.link2}>{props.text2}</a></Button>
+       
         </Toolbar>
       </AppBar>
     </div>
