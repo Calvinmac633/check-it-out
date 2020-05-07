@@ -96,6 +96,7 @@ export default function SignInForm() {
             <Form className={classes.form} noValidate >
               <Form.Group>
                 <Form.Control
+                style={{ fontSize: '25px', fontFamily: 'Open Sans'}}
                   ref={listNameRef}
                   variant="outlined"
                   margin="normal"
@@ -116,7 +117,14 @@ export default function SignInForm() {
                   color=""
                   className={classes.submit}
                   type="submit"
-                  // href="/List"
+                  style={{ 
+                    fontSize: '35px', fontFamily: "londrina Shadow",
+                      background: "#84628c",
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      display: 'flex',
+                    color: "#FFFFFF",
+                    marginLeft: '16%',}}
                 >
                   Let's Create
           </Button>
@@ -137,8 +145,7 @@ export default function SignInForm() {
         </Typography>
             <Form className={classes.form} noValidate>
             <Form.Group>
-                <Form.Control
-                 multiline InputProps={{ style: { fontFamily:"londrina Shadow", fontSize: '30px', backgroundcolor:"#856c8b"} }}
+                <Form.Control       style={{ fontSize: '25px', fontFamily: 'Open Sans'}}
                 ref={codeNameRef}
                 variant="outlined"
                 margin="normal"
@@ -156,8 +163,16 @@ export default function SignInForm() {
                   type="submit"
                   fullWidth
                   variant="contained"
-                  color=""
+                  style={{ 
+                    fontSize: '35px', fontFamily: "londrina Shadow",
+                      background: "#84628c",
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      display: 'flex',
+                    color: "#FFFFFF",
+                    marginLeft: '16%',}}
                   className={classes.submit}
+                  required
                 >
                   Let's Search
                 </Button>
