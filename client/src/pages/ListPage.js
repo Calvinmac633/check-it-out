@@ -29,7 +29,7 @@ export function ListPage() {
                 console.log("THIS IS THE DELETE API CLICK RESULT", result)
                 dispatch({
                     type: REMOVE_LIST_ITEM,
-                    codename: "dog-peach",
+                    // codename: "dog-peach",
                     _id: id, //the second id is not defined
                 });
             })
@@ -60,12 +60,13 @@ export function ListPage() {
 
     return (
 
-        state.currentList.codename !== 0 ? (<div>
+        state.currentList.listname !== undefined ? (<div>
             <AppBar link1="/" text1="Gotta Blast">
                 <Modal />
             </AppBar>
                                             
         <h2>{"Your codename is: " + codename}</h2>
+        <h2>{"Your listname is: " + listname}</h2>
             <main role="main">
                 <section class="jumbotron text-left">
                     <div class="container">
