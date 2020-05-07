@@ -6,7 +6,7 @@ import API from "../../utils/API"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheck } from '@fortawesome/free-solid-svg-icons'
 import AppBar from "../AppBar"
-reateListForm.css"
+import "./CreateListForm.css"
 import { Form, Button, Table, ThemeProvider } from 'react-bootstrap';
 
 // import codename from ZOEYTHING

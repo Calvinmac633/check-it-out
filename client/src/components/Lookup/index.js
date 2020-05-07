@@ -96,7 +96,6 @@ export default function SignInForm() {
             <Form className={classes.form} noValidate >
               <Form.Group>
                 <Form.Control
-                style={{ fontSize: '25px', fontFamily: 'Open Sans'}}
                   ref={listNameRef}
                   variant="outlined"
                   margin="normal"
@@ -117,14 +116,7 @@ export default function SignInForm() {
                   color=""
                   className={classes.submit}
                   type="submit"
-                  style={{ 
-                    fontSize: '35px', fontFamily: "londrina Shadow",
-                      background: "#84628c",
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      display: 'flex',
-                    color: "#FFFFFF",
-                    marginLeft: '16%',}}
+                  // href="/List"
                 >
                   Let's Create
           </Button>
@@ -145,7 +137,8 @@ export default function SignInForm() {
         </Typography>
             <Form className={classes.form} noValidate>
             <Form.Group>
-                <Form.Control       style={{ fontSize: '25px', fontFamily: 'Open Sans'}}
+                <Form.Control
+                 multiline InputProps={{ style: { fontFamily:"londrina Shadow", fontSize: '30px', backgroundcolor:"#856c8b"} }}
                 ref={codeNameRef}
                 variant="outlined"
                 margin="normal"
@@ -163,16 +156,8 @@ export default function SignInForm() {
                   type="submit"
                   fullWidth
                   variant="contained"
-                  style={{ 
-                    fontSize: '35px', fontFamily: "londrina Shadow",
-                      background: "#84628c",
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      display: 'flex',
-                    color: "#FFFFFF",
-                    marginLeft: '16%',}}
+                  color=""
                   className={classes.submit}
-                  required
                 >
                   Let's Search
                 </Button>
