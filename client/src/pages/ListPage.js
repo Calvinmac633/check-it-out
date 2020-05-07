@@ -64,6 +64,7 @@ export function ListPage() {
                 <Modal />
             </AppBar>
         <h2>{"Your codename is: " + codename}</h2>
+        <h2>{state.currentList.listname}</h2>
             <main role="main">
                 <section class="jumbotron text-left">
                     <div class="container">
