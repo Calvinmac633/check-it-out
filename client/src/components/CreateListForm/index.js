@@ -6,7 +6,7 @@ import API from "../../utils/API"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheck } from '@fortawesome/free-solid-svg-icons'
 import AppBar from "../AppBar"
-reateListForm.css"
+import "./CreateListForm.css"
 import { Form, Button, Table, ThemeProvider } from 'react-bootstrap';
 
 // import codename from ZOEYTHING
@@ -87,9 +87,9 @@ function CreateListForm() {
   </style>
       <Form.Group controlId="formSearch">
       <ThemeProvider prefixes={{ form: 'form-text' }}>      
-        <Form.Text className="text-muted">
+        {/* <Form.Text className="text-muted">
           Enter the item name.
-          </Form.Text>
+          </Form.Text> */}
           </ThemeProvider>{' '}  
       <ThemeProvider prefixes={{ form: 'form-control' }}>
         <Form.Control ref={nameRef} type="text" placeholder="Add Item" />
@@ -98,10 +98,10 @@ function CreateListForm() {
       </Form.Group>
       <Form.Group controlId="formQuantity">
       <ThemeProvider prefixes={{ form: 'form-control' }}>
-      <Form.Text className="text-muted">
+      {/* <Form.Text className="text-muted">
 
           Enter the item quantity
-              </Form.Text>
+              </Form.Text> */}
         <Form.Control ref={quantityRef} type="text" placeholder="Enter Quantity" />
         </ThemeProvider>{' '}        
       

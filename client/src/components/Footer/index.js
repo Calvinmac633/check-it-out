@@ -3,10 +3,10 @@ import Link from '@material-ui/core/Link';
 import Typography from '@material-ui/core/Typography';
 
 
-function Copyright() {
+function Footer() {
   return (
 
-    <footer className="blockquote-footer" style={{backgroundColor:"#b9ebcc"}}>
+    <footer className="fixed-footer" style={{backgroundColor:"#b9ebcc"}}>
       <Typography variant="body2" color="textSecondary" align="center"style={{color: 'grey', fontSize: '20px', fontFamily:"londrina Shadow"}}>
 
         {'Copyright © '}
@@ -20,4 +20,4 @@ function Copyright() {
   );
 }
 
-export default Copyright;
+export default Footer;

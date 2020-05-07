@@ -3,7 +3,7 @@ import { useStoreContext } from "../utils/GlobalState";
 import { REMOVE_LIST_ITEM, UPDATE_LISTS, LOADING, SET_CURRENT_LIST, ADD_LIST } from "../utils/actions"
 import React, { useState, useEffect, useRef } from "react";
 import { Link, useParams } from "react-router-dom";
-import { Form, Button, Table } from 'react-bootstrap';
+import { Form, Button, Table, ThemeProvider } from 'react-bootstrap';
 import API from "../utils/API";
 import Modal from "../components/Modal";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -16,7 +16,7 @@ import CreateListForm from "../components/CreateListForm"
 export function ListPage() {
     const { codename } = useParams();
     const { id } = useParams();
- 
+
     // const [formObject, setFormObject] = useState([]);
 
     const [state, dispatch] = useStoreContext();
@@ -60,85 +60,100 @@ export function ListPage() {
 
     return (
         state.currentList.codename !== 0 ? (<div>
+            <style type="text/css">
+                {`
+                    .my-table {
+                        width: 100%;
+                        
+
+                    }
+    
+                `}
+            </style>
             <AppBar link1="/" text1="Gotta Blast">
                 <Modal />
             </AppBar>
-            <h1>Your codename is:</h1>
-        <h2>{codename}</h2>
-        <br></br>
-        <br></br>
+            {/* <h1>Your codename is:</h1>
+            <h2>{codename}</h2> */}
+            <br></br>
             <main role="main">
                 <section>
                     <div class="container">
+                        <h1>Your codename is:</h1>
+                        <h2>{codename}</h2>
+                        <br></br>
                         <CreateListForm />
                         <div>
                         </div>
                         {console.log("This is state -->", state)}
-                        <Table bordered responsive size="sm">
-                            <thead>
-                                <tr>
-                                    <th>#</th>
-                                    <th>Item
+                        <ThemeProvider prefixes={{ table: 'my-table' }}>
+                            <Table bordered responsive size="sm">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Item
                                     </th>
-                                    <th>Quantity</th>
-                                    <th>Purchased?</th>
-                                    {/* <th>ID</th> */}
-                                </tr>
-                                {console.log(state.currentList)}
-                            </thead>
-
-                            {/* This checks to see if there are any items, if not -> does nothing, if it does -> return table body */}
-                            {state.currentList.items ? <tbody>
-                                {console.log("this is state.currentList.items ----> ", state.currentList.items)}
-                                {console.log("this is state ----> ", state)}
-                                {state.currentList.items.map(item =>
-                                    <tr>
-                                        <td>{count++}</td>
-                                        <td>{item.itemName}</td>
-                                        <td>{item.quantity}</td>
-                                        <td><Button onClick={() => {
-                                            removeListItem(item._id)
-                                        }}>
-                                            <FontAwesomeIcon icon={faCheck}>
-                                                {item.purchased}</FontAwesomeIcon>
-                                        </Button>
-                                        </td>
-                                        {/* <td>{item._id}</td> */}
+                                        <th>Quantity</th>
+                                        <th>Purchased?</th>
+                                        {/* <th>ID</th> */}
                                     </tr>
-                                )}
+                                    {console.log(state.currentList)}
+                                </thead>
 
-                            </tbody> : null
+                                {/* This checks to see if there are any items, if not -> does nothing, if it does -> return table body */}
+                                {state.currentList.items ? <tbody>
+                                    {console.log("this is state.currentList.items ----> ", state.currentList.items)}
+                                    {console.log("this is state ----> ", state)}
+                                    {state.currentList.items.map(item =>
+                                        <tr>
+                                            <td>{count++}</td>
+                                            <td>{item.itemName}</td>
+                                            <td>{item.quantity}</td>
+                                            <td><Button style={{margin: "1rem"}}onClick={() => {
+                                                removeListItem(item._id)
+                                            }}>
+                                                <FontAwesomeIcon icon={faCheck}>
+                                                    {item.purchased}</FontAwesomeIcon>
+                                            </Button>
+                                            </td>
+                                            {/* <td>{item._id}</td> */}
+                                        </tr>
+                                    )}
 
-
-                            }
-
-                            {state.currentList.length > 0 ? <tbody>
-                                {console.log("this is state.currentList ----> ", state.currentList)}
-                                {console.log("this is state ----> ", state)}
-                                {state.currentList.map(item =>
-                                    <tr>
-                                        <td>{count++}</td>
-                                        <td>{item.itemName}</td>
-                                        <td>{item.quantity}</td>
-                                        <td><Button onClick={() => {
-                                            removeListItem(item._id)
-                                        }}>
-                                            <FontAwesomeIcon icon={faCheck}>
-                                                {item.purchased}</FontAwesomeIcon>
-                                        </Button>
-                                        </td>
-                                        {/* <td>{item._id}</td> */}
-                                    </tr>
-                                )}
-
-                            </tbody> : null
+                                </tbody> : null
 
 
-                            }
+                                }
+
+                                {state.currentList.length > 0 ? <tbody>
+                                    {console.log("this is state.currentList ----> ", state.currentList)}
+                                    {console.log("this is state ----> ", state)}
+                                    {state.currentList.map(item =>
+                                        <tr>
+                                            <td>{count++}</td>
+                                            <td>{item.itemName}</td>
+                                            <td>{item.quantity}</td>
+                                            <td><Button onClick={() => {
+                                                removeListItem(item._id)
+                                            }}>
+                                                <FontAwesomeIcon icon={faCheck}>
+                                                    {item.purchased}</FontAwesomeIcon>
+                                            </Button>
+                                            </td>
+                                            {/* <td>{item._id}</td> */}
+                                        </tr>
+                                    )}
+
+                                </tbody> : null
+
+
+                                }
 
 
 
-                        </Table>
+                            </Table>
+                        </ThemeProvider>{' '}
+
                     </div>
                 </section>
             </main>

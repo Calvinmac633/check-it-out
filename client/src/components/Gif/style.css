@@ -1,0 +1,49 @@
+
+.description {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 900;
+    font-size: larger;
+    color: #664a6e;
+    margin: 0;
+}
+
+.descriptionContainer {
+        margin: 2rem 22rem 0rem 22rem;
+        text-align: center;
+        line-height: 2.1rem;
+}
+
+
+
+
+
+@media (max-width: 1200px ) {
+    .descriptionContainer {
+        margin: 2rem 15rem 0rem 10rem;
+        text-align: center;
+    }
+  }
+@media (max-width: 1000px ) {
+    .descriptionContainer {
+        margin: 2rem 10rem 0rem 10rem;
+        text-align: center;
+    }
+  }
+  @media (max-width: 800px ) {
+    .descriptionContainer {
+        margin: 1.5rem 9rem 0rem 9rem;
+        text-align: center;
+    }
+  }
+  @media (max-width: 600px ) {
+    .descriptionContainer {
+        margin: 1rem 7rem 0rem 7rem;
+        text-align: center;
+    }
+  }
+  @media (max-width: 0px ) {
+    .descriptionContainer {
+        margin: .5rem 3rem 0rem 3rem;
+        text-align: center;
+    }
+  }

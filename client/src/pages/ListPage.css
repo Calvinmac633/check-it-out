@@ -6,8 +6,10 @@ tr{
     background-color:#3f8cb5;
     text-align: center;
     padding: 0%;
+    padding-bottom: 0;
    
 }
+
 td{
     color: #3f8cb5;
     font-family: Roboto;
@@ -24,13 +26,17 @@ td{
     border: 2px solid #f3c623;
     
 }
+.table {
+    padding-bottom: 0rem;
+}
 
 h1{
     font-family:londrina Shadow;
     font-Size: 30px;
     justify-content: center;
     align-items: center;
-    margin-left: 2%;    
+    /* margin-left: 2%;     */
+    font-weight: 900;
 
 }
 
@@ -40,6 +46,7 @@ h2{
     font-Size: 25px;
     justify-content: center;
     align-items: center;
-    margin-left: 2%;    
+    /* margin-left: 2%;     */
+    
 
 }
