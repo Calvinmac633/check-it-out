@@ -5,9 +5,9 @@ export default {
   createList: function (listname) {
     return axios.post('/api/list/' + listname);
   },
-  getList: function (codename) {
-    console.log(codename)
-    return axios.get("/api/list/" + codename);
+  getList: function (codename, listname) {
+    console.log("LISTNAME IN API",listname)
+    return axios.get("/api/list/" + codename + "/" + listname);
   },
   addItem: function (codename, listData) {
     console.log(codename)

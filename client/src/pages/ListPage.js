@@ -29,7 +29,7 @@ export function ListPage() {
                 console.log("THIS IS THE DELETE API CLICK RESULT", result)
                 dispatch({
                     type: REMOVE_LIST_ITEM,
-                    codename: "dog-peach",
+                    // codename: codename,
                     _id: id, //the second id is not defined
                 });
             })
@@ -37,9 +37,9 @@ export function ListPage() {
     };
 
 
-    const getList = (codename) => {
+    const getList = (codename, listname) => {
         dispatch({ type: LOADING });
-        API.getList(codename)
+        API.getList(codename, listname)
             .then(results => {
                 console.log(results)
                 dispatch({
@@ -66,6 +66,8 @@ export function ListPage() {
             </AppBar>
                                             
         <h2>{"Your codename is: " + codename}</h2>
+        <h2>{"Your listname is: " + listname}</h2>
+        {console.log("Coming right after headers",state.currentList)}
             <main role="main">
                 <section class="jumbotron text-left">
                     <div class="container">

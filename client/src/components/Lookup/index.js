@@ -66,7 +66,8 @@ export default function SignInForm() {
     API.createList(listNameRef.current.value
     )
       .then(res =>
-        window.location.href = "list/" + res.data.codename)
+        window.location.href = "list/" + res.data.codename + "/" + res.data.listname
+        )
   }
 
   const handleSubmitCodename = e => {

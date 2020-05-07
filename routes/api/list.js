@@ -7,14 +7,14 @@ router.route('/:listname')
   .post(listController.create)
 
 router
-  .route("/:codename")
+  .route("/:codename/:listname")
   .get(listController.findOne)
 
   // .post(listController.create)
   .put(listController.findOneAndUpdate)
 
   router
-  .route("/:codename/:id")
+  .route("/:codename/:listname/:id/")
   .put(listController.remove);
 
 
