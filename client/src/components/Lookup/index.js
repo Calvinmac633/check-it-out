@@ -24,25 +24,25 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    border: "5px solid #856c8b",
+    border: "5px solid #683fb5",
     backgroundColor: "#fcf8f3",
     borderBottomLeftRadius: "5px",
     borderBottomRightRadius: "5px",
-    borderTopLeftRadius: "5px",
+    borderTopLeftRadius: "10px",
     borderTopRightRadius: "5px"
   },
   avatar: {
     margin: theme.spacing(1),
-    backgroundColor: "#856c8b"
+    backgroundColor: "#683fb5"
   },
   form: {
     width: '80%', // Fix IE 11 issue.
     marginTop: theme.spacing(1),
-    color: "#856c8b"
+    color: "#683fb5"
   },
   submit: {
     margin: theme.spacing(3, 0, 2),
-    color: "#856c8b",
+    color: "#683fb5",
     fontFamily: "londrina Shadow",
     fontSize: '25px'
   },
@@ -119,7 +119,7 @@ export default function SignInForm() {
                   type="submit"
                   style={{ 
                     fontSize: '35px', fontFamily: "londrina Shadow",
-                      background: "#84628c",
+                      background: "#683fb5",
                       alignItems: 'center',
                       justifyContent: 'center',
                       display: 'flex',
@@ -130,7 +130,18 @@ export default function SignInForm() {
           </Button>
               </Link>
 
-  
+              <div className="outer" style={{ width: '1px',
+  height: '100%',
+  margin: 'auto',
+  position: 'relative',
+  overflow: 'hidden'}}>
+  <div className="inner" style={{position: 'absolute',
+  width:'100%',
+  height: '40%',
+  background: '#683fb5',
+  top: '30%',
+  boxShadow: '0px 0px 30px 20px grey'}}></div>
+</div>
             </Form>
           </div>
         </Container>
@@ -145,7 +156,7 @@ export default function SignInForm() {
         </Typography>
             <Form className={classes.form} noValidate>
             <Form.Group>
-                <Form.Control       style={{ fontSize: '25px', fontFamily: 'Open Sans'}}
+                <Form.Control  style={{ fontSize: '25px', fontFamily: 'Open Sans'}}
                 ref={codeNameRef}
                 variant="outlined"
                 margin="normal"
@@ -165,7 +176,7 @@ export default function SignInForm() {
                   variant="contained"
                   style={{ 
                     fontSize: '35px', fontFamily: "londrina Shadow",
-                      background: "#84628c",
+                      background: "#683fb5",
                       alignItems: 'center',
                       justifyContent: 'center',
                       display: 'flex',

@@ -1,15 +1,17 @@
 tr{
-    color: #18b0b0;
+    color: #3f8cb5;
     border: 5px solid #f3c623;
     font-family:londrina Shadow;
-    font-Size: 20px;
+    font-Size: 35px;
     background-color: white;
+    text-align: center;
+    padding: 0%;
    
 }
 td{
-    color: #18b0b0;
+    color: #3f8cb5;
     font-family: Roboto;
-    font-Size: 20px;
+    font-Size: 21px;
     background-color: white;
     
 }
@@ -20,13 +22,21 @@ td{
     border: 3px solid #f3c623;
     
 }
-
-h2{
-    color: #856c8b;
-    font-family: Roboto;
+h1{
+    font-family:londrina Shadow;
     font-Size: 30px;
     justify-content: center;
     align-items: center;
-    margin-left: 36%;    
+    margin-left: 2%;    
+
+}
+
+h2{
+    color: #683fb5;
+    font-family: Roboto;
+    font-Size: 25px;
+    justify-content: center;
+    align-items: center;
+    margin-left: 2%;    
 
 }

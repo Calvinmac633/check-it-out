@@ -51,11 +51,11 @@ function CreateListForm() {
     .my-btn {
       width: 200;
     margin: auto;
-    color: #856c8b; 
-    font-size:25px;
+    color: #FFFFFF;
+    font-size:30px;
     font-Family: londrina Shadow;
-    background-color: #dee3e2; 
-    border: 3px solid #856c8b;
+    background-color: #683fb5; 
+    border: 3px solid #683fb5;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -66,28 +66,37 @@ function CreateListForm() {
       width:200;
       margin: auto;
       font-Family: Open Sans;
-      font-size:30px;
-      border: 3px solid #856c8b;
+      font-size:21px;
+      border: 3px solid #683fb5;
   }
+  .form-text{
+    margin: auto;
+    font-size:25px;
+    color: #3f8cb5;
+}
     
     `}
   </style>
       <Form.Group controlId="formSearch">
-      <ThemeProvider prefixes={{ form: 'form-control' }}>
-        <Form.Control ref={nameRef} type="text" placeholder="Add Item" />
-        </ThemeProvider>{' '}        
+      <ThemeProvider prefixes={{ form: 'form-text' }}>      
         <Form.Text className="text-muted">
           Enter the item name.
           </Form.Text>
+          </ThemeProvider>{' '}  
+      <ThemeProvider prefixes={{ form: 'form-control' }}>
+        <Form.Control ref={nameRef} type="text" placeholder="Add Item" />
+        </ThemeProvider>{' '}  
+     
       </Form.Group>
       <Form.Group controlId="formQuantity">
 
       <ThemeProvider prefixes={{ form: 'form-control' }}>
-        <Form.Control ref={quantityRef} type="text" placeholder="Enter Quantity" />
-        </ThemeProvider>{' '}        
-        <Form.Text className="text-muted">
+      <Form.Text className="text-muted">
           Enter the item quantity
               </Form.Text>
+        <Form.Control ref={quantityRef} type="text" placeholder="Enter Quantity" />
+        </ThemeProvider>{' '}        
+      
       </Form.Group>
       <ThemeProvider prefixes={{ btn: 'my-btn' }}>
       <Button onClick={handleSubmit} variant="flat" type="button">Add to list</Button>

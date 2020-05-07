@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "center",
     fontSize: '65px',
     fontFamily:'Londrina Shadow',
-    marginLeft: "250px"
+    marginLeft: "100px"
   },
   appBar: {
    height: "75px",
@@ -39,8 +39,8 @@ const useStyles = makeStyles((theme) => ({
 export default function ButtonAppBar(props) {
   const classes = useStyles();
   return (
-    <div className={classes.root}>
-      <AppBar className={classes.appBar} position="static">
+    <div >
+      <AppBar  position="static">
         <Toolbar>
           <Typography variant="h6" className={classes.title }>
             <a className={classes.logo}style={{ color: 'white'}} href="/">Check it Out</a>

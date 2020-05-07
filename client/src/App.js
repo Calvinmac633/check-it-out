@@ -43,7 +43,7 @@ function App() {
           </Switch>
         </StoreProvider>
         
-        <Footer />
+        {/* <Footer /> */}
       </Router>
 
 
