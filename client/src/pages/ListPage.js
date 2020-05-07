@@ -15,6 +15,7 @@ import CreateListForm from "../components/CreateListForm"
 // import Modal from "../components/Modal";
 export function ListPage() {
     const { codename } = useParams();
+    const { listname } = useParams();
     const { id } = useParams();
 
     // const [formObject, setFormObject] = useState([]);
@@ -43,7 +44,8 @@ export function ListPage() {
                 console.log(results)
                 dispatch({
                     type: SET_CURRENT_LIST,
-                    list: results.data
+                    list: results.data,
+                    // quantity: results.data,
                 });
             })
             .catch(err => console.log(err));
@@ -62,6 +64,8 @@ export function ListPage() {
             <AppBar link1="/" text1="Gotta Blast">
                 <Modal />
             </AppBar>
+                                            
+        <h2>{"Your codename is: " + codename}</h2>
             <main role="main">
                 <section class="jumbotron text-left">
                     <div class="container">
@@ -76,7 +80,7 @@ export function ListPage() {
                                     <th>Item</th>
                                     <th>Quantity</th>
                                     <th>Purchased?</th>
-                                    <th>ID</th>
+                                    {/* <th>ID</th> */}
                                 </tr>
                                 {console.log(state.currentList)}
                             </thead>
@@ -97,7 +101,7 @@ export function ListPage() {
                                                 {item.purchased}</FontAwesomeIcon>
                                         </Button>
                                         </td>
-                                        <td>{item._id}</td>
+                                        {/* <td>{item._id}</td> */}
                                     </tr>
                                 )}
 
@@ -121,7 +125,7 @@ export function ListPage() {
                                                 {item.purchased}</FontAwesomeIcon>
                                         </Button>
                                         </td>
-                                        <td>{item._id}</td>
+                                        {/* <td>{item._id}</td> */}
                                     </tr>
                                 )}
 
