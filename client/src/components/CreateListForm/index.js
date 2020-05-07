@@ -61,6 +61,13 @@ function CreateListForm() {
     align-items: center;
     margin-Bottom: 30px;
     }
+    .form-control{
+      width:200;
+      margin: auto;
+      font-Family: londrina Shadow;
+      font-size:30px;
+      border: 3px solid #856c8b;
+  }
 
     
     `}
@@ -72,8 +79,9 @@ function CreateListForm() {
           </Form.Text>
       </Form.Group>
       <Form.Group controlId="formQuantity">
-
+      <ThemeProvider prefixes={{ form: 'form-control' }}>
         <Form.Control ref={quantityRef} type="text" placeholder="Enter Quantity" />
+        </ThemeProvider>{' '}
         <Form.Text className="text-muted">
           Enter the item quantity
               </Form.Text>

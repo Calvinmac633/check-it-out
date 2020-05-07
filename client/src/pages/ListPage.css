@@ -20,3 +20,11 @@ td{
     border: 3px solid #f3c623;
     
 }
+h2{
+    color:#0f4c81;
+    background-color:#a8d3da;
+    font-family:londrina Shadow;
+}
+.jumbotron text-left{
+    background-color:#a8d3da;
+}
