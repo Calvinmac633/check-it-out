@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "center",
     fontSize: '65px',
     fontFamily:'Londrina Shadow',
-    float:"Right",
+    marginLeft: "250px"
   },
   appBar: {
    height: "75px",

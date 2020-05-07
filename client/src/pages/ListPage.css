@@ -2,14 +2,14 @@ tr{
     color: #18b0b0;
     border: 5px solid #f3c623;
     font-family:londrina Shadow;
-    font-Size: 30px;
+    font-Size: 20px;
     background-color: white;
    
 }
 td{
     color: #18b0b0;
-    font-family:londrina Shadow;
-    font-Size: 30px;
+    font-family: Roboto;
+    font-Size: 20px;
     background-color: white;
     
 }
@@ -19,4 +19,14 @@ td{
 .table-bordered thead td, .table-bordered thead th{
     border: 3px solid #f3c623;
     
+}
+
+h2{
+    color: #856c8b;
+    font-family: Roboto;
+    font-Size: 30px;
+    justify-content: center;
+    align-items: center;
+    margin-left: 36%;    
+
 }

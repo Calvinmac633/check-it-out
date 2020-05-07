@@ -15,8 +15,8 @@ import CreateListForm from "../components/CreateListForm"
 // import Modal from "../components/Modal";
 export function ListPage() {
     const { codename } = useParams();
-    const { listname } = useParams();
     const { id } = useParams();
+ 
 
     // const [formObject, setFormObject] = useState([]);
 
@@ -64,7 +64,7 @@ export function ListPage() {
             <AppBar link1="/" text1="Gotta Blast">
                 <Modal />
             </AppBar>
-                                            
+                       
         <h2>{"Your codename is: " + codename}</h2>
             <main role="main">
                 <section class="jumbotron text-left">
